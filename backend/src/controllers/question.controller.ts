@@ -22,6 +22,55 @@ export const getRandomQuestion = async (req: AuthRequest, res: Response) => {
 	}
 };
 
+export const giveup = async (req: AuthRequest, res: Response) => {
+	try {
+		const { qbid } = req.body;
+		const { userid } = req.user!;
+		if (!qbid) {
+			return res.status(400).json({ message: "Question ID is required" });
+		}
+		const question = await questionService.getQuestionById(qbid);
+		if (!question) {
+			return res.status(404).json({ message: "Question not found" });
+		}
+		const { city, country } = question;
+		const correctAnswer = `${city}, ${country}`;
+		if (userid) {
+			const user = await userService.getUserById(userid);
+			if (user) {
+				// eslint-disable-next-line prefer-const
+				let { wins, loss } = user;
+				loss += 1;
+
+				const updatedUser = await userService.updateUserStats(
+					userid,
+					wins,
+					loss
+				);
+
+				if (updatedUser) {
+					return res.status(200).json({
+						message: "You gave up!",
+						data: {
+							correctAnswer,
+							wins: updatedUser.wins,
+							loss: updatedUser.loss,
+						},
+					});
+				}
+			}
+		}
+		// If we couldn't update user stats or user is not authenticated
+		res.status(200).json({
+			message: "You gave up!",
+			correctAnswer,
+		});
+	} catch (error) {
+		console.error("Error giving up:", error);
+		res.status(500).json({ message: "Internal server error" });
+	}
+};
+
 export const validateAnswer = async (req: AuthRequest, res: Response) => {
 	try {
 		const { qbid, answer } = req.body;

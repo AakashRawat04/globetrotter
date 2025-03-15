@@ -11,6 +11,7 @@ import {
 } from "../controllers/challenge.controller";
 import {
 	getRandomQuestion,
+	giveup,
 	validateAnswer,
 } from "../controllers/question.controller";
 import { authMiddleware } from "../middlewares/auth.middleware";
@@ -31,6 +32,7 @@ router.put("/user/stats", authMiddleware, updateUserStats);
 // Question routes
 router.get("/guess", authMiddleware, getRandomQuestion);
 router.post("/validate", authMiddleware, validateAnswer);
+router.post("/giveup", authMiddleware, giveup);
 
 // Challenge routes - protected with auth middleware
 router.post("/challenge/create", authMiddleware, createChallenge);

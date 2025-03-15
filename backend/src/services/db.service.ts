@@ -113,11 +113,23 @@ export const questionService = {
 		const question = data as QuestionBank;
 		const normalizedAnswer = answer.trim().toLowerCase();
 		const correctCity = question.city.toLowerCase();
-		const correctCountry = question.country.toLowerCase();
 
-		return (
-			normalizedAnswer === correctCity || normalizedAnswer === correctCountry
-		);
+		return normalizedAnswer === correctCity;
+	},
+
+	async getQuestionById(qbid: string): Promise<QuestionBank | null> {
+		const { data, error } = await supabase
+			.from("question_bank")
+			.select("*")
+			.eq("qbid", qbid)
+			.single();
+
+		if (error) {
+			console.error("Error fetching question by ID:", error);
+			return null;
+		}
+
+		return data as QuestionBank;
 	},
 };
 

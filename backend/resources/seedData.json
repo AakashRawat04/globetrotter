@@ -366,5 +366,1285 @@
       "The apples here are so crisp, you’ll hear them crunch over the traffic!",
       "A mall road bans cars so you can stroll—and dodge selfie sticks."
     ]
+  },
+  {
+    "city": "Mumbai",
+    "country": "India",
+    "clues": [
+      "A coastal chaos where trains are a human sandwich and chai is your lifeline.",
+      "Bollywood dreams bloom here while your landlord’s rent demands haunt you."
+    ],
+    "fun_fact": [
+      "A sea-facing road got fancy so rich folks could flex their horse carriages—now it’s selfie central!",
+      "The local trains cram more people than your family at a free buffet."
+    ],
+    "trivia": [
+      "Spicy vada pav here laughs at your weak stomach while you cry into your napkin!",
+      "A 27-floor house towers over you, reminding you your flat is basically a shoebox."
+    ]
+  },
+  {
+    "city": "Delhi",
+    "country": "India",
+    "clues": [
+      "Honking is the soundtrack and smog is the perfume of this wild ride.",
+      "Politicians and paranthas compete for your love while traffic tests your soul."
+    ],
+    "fun_fact": [
+      "A tomb so pretty it’s basically a love letter in stone—guy even built himself a spare!",
+      "The metro’s so packed, you’ll know your neighbor’s life story by the next stop."
+    ],
+    "trivia": [
+      "Butter chicken here is so good, you’ll forgive the auntie elbowing you for space!",
+      "A giant flag waves while you’re stuck cursing the jam below."
+    ]
+  },
+  {
+    "city": "Bangalore",
+    "country": "India",
+    "clues": [
+      "Tech geeks and traffic jams fight for supremacy in this rainy mess.",
+      "A place where ‘nice weather’ is just a polite lie before the downpour hits."
+    ],
+    "fun_fact": [
+      "A park here was once a king’s hunting ground—now it’s where you hunt Wi-Fi!",
+      "Pubs outnumber people, or at least it feels that way on Fridays."
+    ],
+    "trivia": [
+      "Dosas here are so crisp, they crunch louder than your boss’s emails!",
+      "Potholes turn your commute into an obstacle course—good luck, champ!"
+    ]
+  },
+  {
+    "city": "Kolkata",
+    "country": "India",
+    "clues": [
+      "Yellow cabs swarm like bees and fish curry is basically a citizen.",
+      "Bookworms and tea debates thrive here like mosquitoes in a puddle."
+    ],
+    "fun_fact": [
+      "A bridge here shakes like it’s grooving to a Bengali beat!",
+      "Trams crawl along like they’re too cool to catch up with 2025."
+    ],
+    "trivia": [
+      "Sweets here are so good, your diet cries mercy before your third rasgulla!",
+      "A river watches you munch mishti while dodging rickshaw chaos."
+    ]
+  },
+  {
+    "city": "Chennai",
+    "country": "India",
+    "clues": [
+      "Sweat’s your shadow and filter coffee’s your priest in this steamy haven.",
+      "Lungis rule the streets while auto uncles charge like they own them."
+    ],
+    "fun_fact": [
+      "A beach stretches so far, you’ll collapse before you escape the snack vendors!",
+      "Movies here birth more heroes than your family has opinions."
+    ],
+    "trivia": [
+      "Idlis here are so fluffy, you’ll wonder if they’re food or pillows!",
+      "The sun roasts you free of charge—bring your own sunscreen, yaar!"
+    ]
+  },
+  {
+    "city": "Hyderabad",
+    "country": "India",
+    "clues": [
+      "Biryani’s the boss here, and pearls shine brighter than your future.",
+      "Old forts and tech towers bicker like siblings at a wedding."
+    ],
+    "fun_fact": [
+      "A lake statue stares at you while you dream of haleem in traffic!",
+      "A film city so huge, it’s basically Bollywood’s spicier cousin."
+    ],
+    "trivia": [
+      "Spice here hits so hard, your tongue calls 911 before dessert!",
+      "A dish so famous, every cook claims their mom invented it."
+    ]
+  },
+  {
+    "city": "Ahmedabad",
+    "country": "India",
+    "clues": [
+      "Kites soar like they own the sky and snacks rule the streets.",
+      "A dry zone where business booms faster than your uncle’s advice."
+    ],
+    "fun_fact": [
+      "A river got a makeover so fancy, it’s now a selfie magnet!",
+      "Textiles here are so old, your dupatta’s probably a historical artifact."
+    ],
+    "trivia": [
+      "Fafda here is so crunchy, it’s louder than your neighbor’s gossip!",
+      "A statue so big, it’s judging your snack choices from the clouds."
+    ]
+  },
+  {
+    "city": "Jaipur",
+    "country": "India",
+    "clues": [
+      "Palaces blush pink while tourists snap pics like paparazzi!",
+      "Camels strut around like they’re late for a royal photoshoot."
+    ],
+    "fun_fact": [
+      "A king built a stargazing setup because the sky was his reality TV!",
+      "A fort’s mirrors turn it into a glitter bomb for kings."
+    ],
+    "trivia": [
+      "Jewelry here sparkles so much, your wallet runs screaming!",
+      "Spicy laal maas dares you to eat it without crying like a baby."
+    ]
+  },
+  {
+    "city": "Pune",
+    "country": "India",
+    "clues": [
+      "Bikes zip around like they’re in a Bollywood chase scene!",
+      "Students and retirees bond over chai like it’s a UN summit."
+    ],
+    "fun_fact": [
+      "A fort on a hill has seen more drama than your family reunion!",
+      "Bakeries here invented bun maska before your grandpa grew a mustache."
+    ],
+    "trivia": [
+      "Misal pav here is so fiery, your mouth’s a volcano by bite two!",
+      "Monsoon treks are so hyped, even the rain shows up early."
+    ]
+  },
+  {
+    "city": "Lucknow",
+    "country": "India",
+    "clues": [
+      "Kebabs melt in your mouth while politeness melts your heart!",
+      "Old ruins whisper poetry louder than your uncle’s karaoke."
+    ],
+    "fun_fact": [
+      "A maze here was built to troll invaders—or maybe just lost tourists!",
+      "Embroidery so fine, your kurta feels like royalty."
+    ],
+    "trivia": [
+      "Food so rich, your stomach needs a vacation after one plate!",
+      "A river flows by, smirking at your kebab obsession."
+    ]
+  },
+  {
+    "city": "Varanasi",
+    "country": "India",
+    "clues": [
+      "A riverside where prayers and chaos crash like a bad remix!",
+      "Steps dip into water where sins—and socks—get a rinse."
+    ],
+    "fun_fact": [
+      "So old, even the rocks here have wrinkles!",
+      "Boats haul more pilgrims than your cousin’s wedding scooter."
+    ],
+    "trivia": [
+      "Chai here is so divine, you’ll forgive the cow in your way!",
+      "A fire’s been burning longer than your family’s WhatsApp fights."
+    ]
+  },
+  {
+    "city": "Goa",
+    "country": "India",
+    "clues": [
+      "Beaches where flip-flops are king and fish curry hugs your soul!",
+      "Party vibes so strong, even the waves dance all night."
+    ],
+    "fun_fact": [
+      "Churches here pose like they’re ready for their close-up!",
+      "Hippies crashed here first—now it’s all sunburnt selfies."
+    ],
+    "trivia": [
+      "Seafood so fresh, it’s basically flirting with your plate!",
+      "A fort laughs at your sunscreen struggles by the sea."
+    ]
+  },
+  {
+    "city": "Amritsar",
+    "country": "India",
+    "clues": [
+      "A golden shine blinds you while butter drowns your bread!",
+      "A sacred spot where food and faith high-five daily."
+    ],
+    "fun_fact": [
+      "A kitchen feeds thousands like it’s a never-ending potluck!",
+      "Soldiers at a border dance like they’re auditioning for a parade."
+    ],
+    "trivia": [
+      "Lassi so thick, you’ll spoon it while napping!",
+      "A pond mirrors the glow while you dodge selfie chaos."
+    ]
+  },
+  {
+    "city": "Kochi",
+    "country": "India",
+    "clues": [
+      "Fishing nets pose like they’re Instagram influencers!",
+      "Spices and history mix like a curry with too much attitude."
+    ],
+    "fun_fact": [
+      "A synagogue’s tiles are so pretty, you’ll forget your prayers!",
+      "Backwaters are so chill, even the fish are on vacation."
+    ],
+    "trivia": [
+      "Spicy prawns here make your tongue scream for mercy!",
+      "Old forts judge your coconut water sips."
+    ]
+  },
+  {
+    "city": "Chandigarh",
+    "country": "India",
+    "clues": [
+      "Roads so planned, they flex harder than your gym bro!",
+      "Gardens bloom like they’re auditioning for a beauty pageant."
+    ],
+    "fun_fact": [
+      "A trash-to-treasure garden proves your junk could be art!",
+      "A French dude designed it, so it’s chic with a side of chaos."
+    ],
+    "trivia": [
+      "Butter chicken here is so good, you’ll bribe the traffic cop for seconds!",
+      "A lake’s ducks mock your paddleboat skills."
+    ]
+  },
+  {
+    "city": "Bhopal",
+    "country": "India",
+    "clues": [
+      "Lakes so big, they’re flexing on your kiddie pool!",
+      "History and biryani wrestle for your heart here."
+    ],
+    "fun_fact": [
+      "A pink mosque blushes at all the tourist stares!",
+      "Caves nearby prove humans chilled here before Wi-Fi."
+    ],
+    "trivia": [
+      "Street food so tasty, you’ll ignore the sweat dripping down your back!",
+      "A boat ride feels like a timeout from your boss’s nagging."
+    ]
+  },
+  {
+    "city": "Guwahati",
+    "country": "India",
+    "clues": [
+      "A river rushes through like it’s late for tea with the hills!",
+      "Temples sit high like they’ve got premium spiritual Wi-Fi."
+    ],
+    "fun_fact": [
+      "A bridge here is the MVP for tea addicts crossing over!",
+      "Rhinos nearby are too cool to care about your camera."
+    ],
+    "trivia": [
+      "Momos so juicy, you’ll elbow your friend for the last one!",
+      "A hilltop view so epic, you’ll forgive the sweaty climb."
+    ]
+  },
+  {
+    "city": "Nagpur",
+    "country": "India",
+    "clues": [
+      "Oranges here are the real VIPs, shining brighter than you!",
+      "A chill middle ground where summers roast you alive."
+    ],
+    "fun_fact": [
+      "A zero marker claims it’s the center—like your mom’s kitchen!",
+      "Lakes so calm, even the fish are meditating."
+    ],
+    "trivia": [
+      "Spicy tarri poha jolts you awake faster than your alarm!",
+      "Tigers nearby judge your picnic game."
+    ]
+  },
+  {
+    "city": "Patna",
+    "country": "India",
+    "clues": [
+      "A riverbank older than your grandpa’s rants!",
+      "Crowds swarm like they’re racing for free litti chokha."
+    ],
+    "fun_fact": [
+      "A granary so deep, it’s a historical diving spot!",
+      "Ruins here spill kingly secrets older than your textbooks."
+    ],
+    "trivia": [
+      "Street food so cheap, your wallet cheers while your stomach groans!",
+      "A bridge so long, you’ll nap halfway across."
+    ]
+  },
+  {
+    "city": "Indore",
+    "country": "India",
+    "clues": [
+      "Breakfast here is a sport—bring your stretchy pants!",
+      "Palaces flex like kings with too much cash and time."
+    ],
+    "fun_fact": [
+      "A night market feeds you till sunrise—sleep’s for losers!",
+      "A river watches you scarf poha like a disappointed dietician."
+    ],
+    "trivia": [
+      "Chaat so good, you’ll fight your cousin for the last bite!",
+      "A glass temple shines like a disco for the gods."
+    ]
+  },
+  {
+    "city": "Surat",
+    "country": "India",
+    "clues": [
+      "Diamonds dazzle like they’re ready for a Bollywood item number!",
+      "Textiles and snacks reign supreme in this busy buzz."
+    ],
+    "fun_fact": [
+      "A clock tower’s so old, it’s probably bored of time!",
+      "Snacks here fatten up even the pigeons."
+    ],
+    "trivia": [
+      "Khaman so fluffy, you’ll question if it’s food or a cloud!",
+      "A bridge swings like it’s jamming to a garba tune."
+    ]
+  },
+  {
+    "city": "Madurai",
+    "country": "India",
+    "clues": [
+      "Temples tower like they’re flexing on your local pandal!",
+      "Jasmine and dosas perfume the air like a spicy hug."
+    ],
+    "fun_fact": [
+      "A palace has so many pillars, you’ll lose count mid-selfie!",
+      "It never sleeps—blame the bells and late-night idlis."
+    ],
+    "trivia": [
+      "Jigar thanda cools you while the heat laughs in your face!",
+      "A river’s so holy, even the fish are praying."
+    ]
+  },
+  {
+    "city": "Shimla",
+    "country": "India",
+    "clues": [
+      "Hills so steep, your legs will sue you by noon!",
+      "Toy trains chug like they’re late for a colonial tea party."
+    ],
+    "fun_fact": [
+      "A ridge’s views stun even the monkeys into silence!",
+      "Summers here are for people done with melting."
+    ],
+    "trivia": [
+      "Apples crunch louder than your boss’s deadlines!",
+      "A car-free road lets you stroll—and dodge selfie sticks."
+    ]
+  },
+  {
+    "city": "Agra",
+    "country": "India",
+    "clues": [
+      "A white monument here screams ‘love’ louder than your mom’s nagging!",
+      "Tourists swarm like ants at a sugar spill."
+    ],
+    "fun_fact": [
+      "A king built it so grand, he got locked up for overspending!",
+      "Mirrors inside sparkle like a royal disco."
+    ],
+    "trivia": [
+      "Petha sweets stick to your teeth like clingy relatives!",
+      "A river flows by, smirking at your selfie struggles."
+    ]
+  },
+  {
+    "city": "Thiruvananthapuram",
+    "country": "India",
+    "clues": [
+      "Coconut trees sway like they’re judging your driving!",
+      "A coastal vibe where temples and beaches share the spotlight."
+    ],
+    "fun_fact": [
+      "A palace here is so wooden, it creaks like your grandpa’s chair!",
+      "Backwaters nearby are so chill, fish throw parties."
+    ],
+    "trivia": [
+      "Fish curry here burns your soul in the best way!",
+      "A beach laughs at your sunburn while you sip tender coconut."
+    ]
+  },
+  {
+    "city": "Bhubaneswar",
+    "country": "India",
+    "clues": [
+      "Temples here stack up like a divine Lego set!",
+      "A chill spot where history and humidity hold hands."
+    ],
+    "fun_fact": [
+      "A cave nearby has monks’ vibes older than your playlist!",
+      "A festival here turns the streets into a dance floor."
+    ],
+    "trivia": [
+      "Rasgulla’s cousin here is so soft, you’ll cry into your plate!",
+      "A park’s peacocks strut like they own the place."
+    ]
+  },
+  {
+    "city": "Visakhapatnam",
+    "country": "India",
+    "clues": [
+      "Beaches and hills team up to flex on your hometown!",
+      "A port where ships and snacks are the real MVPs."
+    ],
+    "fun_fact": [
+      "A submarine museum here lets you play navy without signing up!",
+      "Caves nearby are so old, they’ve seen more than your grandma."
+    ],
+    "trivia": [
+      "Spicy prawns here dare you to eat without sweating!",
+      "A hilltop view mocks your fear of heights."
+    ]
+  },
+  {
+    "city": "Coimbatore",
+    "country": "India",
+    "clues": [
+      "Textiles and temples vibe here like a multitasking pro!",
+      "A chill spot where hills whisper ‘come hike me’."
+    ],
+    "fun_fact": [
+      "A dam nearby is so pretty, even the fish take selfies!",
+      "Industries here pump out more than your uncle’s opinions."
+    ],
+    "trivia": [
+      "Filter coffee wakes you up faster than your mom’s yelling!",
+      "A forest nearby has monkeys plotting your picnic heist."
+    ]
+  },
+  {
+    "city": "Kanpur",
+    "country": "India",
+    "clues": [
+      "Leather and chaos mix here like a bad Bollywood plot!",
+      "A riverbank where history’s older than your dad’s jokes."
+    ],
+    "fun_fact": [
+      "A temple here glows pink like it’s blushing at tourists!",
+      "Factories churn out more than your neighbor’s gossip."
+    ],
+    "trivia": [
+      "Paan here stains your teeth faster than your auntie’s advice stains your day!",
+      "A bridge sighs as you curse the traffic."
+    ]
+  },
+  {
+    "city": "Vadodara",
+    "country": "India",
+    "clues": [
+      "Palaces here flex like they’re ready for a royal selfie!",
+      "A chill vibe where art and snacks reign supreme."
+    ],
+    "fun_fact": [
+      "A museum here has stuff so old, it’s basically a time capsule!",
+      "A garden blooms like it’s showing off for Instagram."
+    ],
+    "trivia": [
+      "Khandvi here is so smooth, you’ll forget your diet plans!",
+      "A lake’s ducks judge your paddle skills."
+    ]
+  },
+  {
+    "city": "Raipur",
+    "country": "India",
+    "clues": [
+      "A quiet hub where forests and factories play tug-of-war!",
+      "Lakes here chill like they’re too cool for drama."
+    ],
+    "fun_fact": [
+      "A waterfall nearby roars louder than your uncle at a wedding!",
+      "A temple sits pretty, watching you munch snacks."
+    ],
+    "trivia": [
+      "Rice here is so good, you’ll fight your sibling for seconds!",
+      "A park’s peacocks strut like they’re runway stars."
+    ]
+  },
+  {
+    "city": "Ranchi",
+    "country": "India",
+    "clues": [
+      "Hills here hug you while waterfalls laugh at your hiking skills!",
+      "A chill spot where nature and noodles coexist."
+    ],
+    "fun_fact": [
+      "A rock garden flexes harder than your gym selfie!",
+      "A dam nearby is so calm, even the fish nap."
+    ],
+    "trivia": [
+      "Momos here are so tasty, you’ll bribe the vendor for more!",
+      "A hilltop view dares you to climb without whining."
+    ]
+  },
+  {
+    "city": "Dehradun",
+    "country": "India",
+    "clues": [
+      "Hills here whisper ‘relax’ while traffic screams ‘hurry up’!",
+      "A valley where schools and snacks share the spotlight."
+    ],
+    "fun_fact": [
+      "A cave nearby drips with spiritual vibes and bat gossip!",
+      "A clock tower’s so quiet, it’s basically meditating."
+    ],
+    "trivia": [
+      "Litchis here are so juicy, you’ll forgive the sticky hands!",
+      "A forest mocks your city lungs with fresh air."
+    ]
+  },
+  {
+    "city": "Jodhpur",
+    "country": "India",
+    "clues": [
+      "A fort looms like it’s judging your sunscreen game!",
+      "Blue houses here flex like they’re in a paint ad."
+    ],
+    "fun_fact": [
+      "A palace turned hotel is so fancy, even the ghosts dress up!",
+      "A desert nearby dares you to sweat it out."
+    ],
+    "trivia": [
+      "Mirchi vada here burns your soul and makes you love it!",
+      "A clock tower ticks while you dodge rickshaws."
+    ]
+  },
+  {
+    "city": "Udaipur",
+    "country": "India",
+    "clues": [
+      "Lakes and palaces here pose like a Bollywood romance set!",
+      "A dreamy vibe where boats and biryani steal the show."
+    ],
+    "fun_fact": [
+      "A palace floats like it’s too cool for land!",
+      "A hilltop fort smirks at your selfie struggles."
+    ],
+    "trivia": [
+      "Rooftop views here make your chai taste like royalty!",
+      "A lake’s ducks judge your paddleboat hustle."
+    ]
+  },
+  {
+    "city": "Mysore",
+    "country": "India",
+    "clues": [
+      "A palace glows like it’s ready for a Diwali close-up!",
+      "Sandalwood and silk vibe here like a fancy auntie."
+    ],
+    "fun_fact": [
+      "A hilltop temple stares down at your dosa obsession!",
+      "A festival turns the streets into a light show."
+    ],
+    "trivia": [
+      "Mysore pak here is so rich, your teeth send a thank-you note!",
+      "A zoo’s elephants judge your snack stash."
+    ]
+  },
+  {
+    "city": "Gurgaon",
+    "country": "India",
+    "clues": [
+      "Skyscrapers flex here while traffic laughs at your schedule!",
+      "A shiny hub where malls and metro rides rule."
+    ],
+    "fun_fact": [
+      "A mall here is so big, you’ll get lost before your coffee cools!",
+      "Fields turned into offices faster than your Wi-Fi drops."
+    ],
+    "trivia": [
+      "Butter chicken here costs more than your dignity after haggling!",
+      "A park’s peacocks strut like they own the lease."
+    ]
+  },
+  {
+    "city": "Noida",
+    "country": "India",
+    "clues": [
+      "Towers sprout here like mushrooms after rain!",
+      "A concrete jungle where traffic and tech bicker."
+    ],
+    "fun_fact": [
+      "A giant mall here has more stores than your auntie’s sarees!",
+      "A film studio churns out drama faster than your family."
+    ],
+    "trivia": [
+      "Momos here are so cheap, you’ll buy them just to flex!",
+      "A park’s ducks mock your picnic skills."
+    ]
+  },
+  {
+    "city": "Ghaziabad",
+    "country": "India",
+    "clues": [
+      "A chaotic sprawl where traffic jams are a lifestyle!",
+      "Close enough to chaos, far enough to pretend it’s chill."
+    ],
+    "fun_fact": [
+      "A bridge here sighs as you curse the potholes!",
+      "Malls sprout like they’re racing skyscrapers."
+    ],
+    "trivia": [
+      "Street food here is so good, you’ll forgive the dust in your eyes!",
+      "A park’s pigeons judge your samosa stash."
+    ]
+  },
+  {
+    "city": "Faridabad",
+    "country": "India",
+    "clues": [
+      "Factories and flats fight for space like siblings!",
+      "A dusty vibe where highways hum all day."
+    ],
+    "fun_fact": [
+      "A lake nearby is so calm, even the fish meditate!",
+      "Industries churn out more than your uncle’s rants."
+    ],
+    "trivia": [
+      "Chole bhature here is so heavy, you’ll nap before dessert!",
+      "A park’s peacocks strut like they’re runway divas."
+    ]
+  },
+  {
+    "city": "Meerut",
+    "country": "India",
+    "clues": [
+      "A chaotic hub where history and hustle collide!",
+      "Sports gear and snacks are the real MVPs here."
+    ],
+    "fun_fact": [
+      "A revolt kicked off here—talk about starting drama!",
+      "A church stands quiet while the streets go wild."
+    ],
+    "trivia": [
+      "Peda here is so sweet, your dentist will send a bill!",
+      "A park’s pigeons judge your chaat stash."
+    ]
+  },
+  {
+    "city": "Rajkot",
+    "country": "India",
+    "clues": [
+      "A chill spot where snacks and spinners vibe together!",
+      "Farms and factories flex like they’re in a tug-of-war."
+    ],
+    "fun_fact": [
+      "A dam nearby is so calm, even the fish nap!",
+      "A museum holds relics older than your playlist."
+    ],
+    "trivia": [
+      "Kathiawadi thali here dares you to finish without a nap!",
+      "A park’s peacocks strut like they own the grass."
+    ]
+  },
+  {
+    "city": "Jabalpur",
+    "country": "India",
+    "clues": [
+      "Rivers and rocks here flex harder than your gym bro!",
+      "A quiet vibe where waterfalls whisper secrets."
+    ],
+    "fun_fact": [
+      "Marble rocks glow like they’re ready for a photoshoot!",
+      "A fort sits high, judging your hiking skills."
+    ],
+    "trivia": [
+      "Street food here is so tasty, you’ll forgive the sweat!",
+      "A river boat ride feels like a timeout from chaos."
+    ]
+  },
+  {
+    "city": "Gwalior",
+    "country": "India",
+    "clues": [
+      "A fort looms like it’s daring you to climb it!",
+      "History and heat wrestle for your attention."
+    ],
+    "fun_fact": [
+      "A palace here mixes styles like a royal DJ!",
+      "A tomb sings history louder than your karaoke night."
+    ],
+    "trivia": [
+      "Samosas here are so good, you’ll fight your friend for the last one!",
+      "A hilltop view mocks your sweaty struggle."
+    ]
+  },
+  {
+    "city": "Vijayawada",
+    "country": "India",
+    "clues": [
+      "A river runs through it like it’s late for a meeting!",
+      "Temples and trade vibe like a multitasking pro."
+    ],
+    "fun_fact": [
+      "A hill cave glows with spiritual vibes and bat gossip!",
+      "A bridge sighs as you curse the traffic."
+    ],
+    "trivia": [
+      "Pickles here burn your tongue and win your heart!",
+      "A riverbank watches you munch like a judge."
+    ]
+  },
+  {
+    "city": "Aurangabad",
+    "country": "India",
+    "clues": [
+      "Caves here whisper history louder than your uncle!",
+      "A fort flexes like it’s ready for a Bollywood siege."
+    ],
+    "fun_fact": [
+      "Rock-cut art here is so old, it’s basically prehistoric Instagram!",
+      "A mini tomb copies a bigger one—like a royal knockoff."
+    ],
+    "trivia": [
+      "Misal here is so spicy, your tongue calls for backup!",
+      "A gate smirks at your selfie struggles."
+    ]
+  },
+  {
+    "city": "Nashik",
+    "country": "India",
+    "clues": [
+      "Grapes and gods share the spotlight here!",
+      "A riverbank where pilgrims and wine vibes collide."
+    ],
+    "fun_fact": [
+      "Caves nearby have monk vibes older than your playlist!",
+      "A coin museum proves money’s been cool forever."
+    ],
+    "trivia": [
+      "Wine here is so smooth, you’ll forgive the heat!",
+      "A river watches you sip chai like a nosy auntie."
+    ]
+  },
+  {
+    "city": "Allahabad",
+    "country": "India",
+    "clues": [
+      "Rivers meet here like they’re crashing a family reunion!",
+      "A spiritual hub where chaos and calm high-five."
+    ],
+    "fun_fact": [
+      "A fort stands quiet while pilgrims flood the shores!",
+      "A tree here is so old, it’s basically immortal."
+    ],
+    "trivia": [
+      "Lassi here is so thick, you’ll spoon it like soup!",
+      "A bridge sighs as you curse the crowd."
+    ]
+  },
+  {
+    "city": "Jamshedpur",
+    "country": "India",
+    "clues": [
+      "Steel and greenery flex here like an odd couple!",
+      "A planned vibe where factories and parks coexist."
+    ],
+    "fun_fact": [
+      "A park here blooms like it’s showing off for selfies!",
+      "A river nearby watches you munch snacks."
+    ],
+    "trivia": [
+      "Momos here are so good, you’ll fight your friend for more!",
+      "A dam’s fish judge your picnic game."
+    ]
+  },
+  {
+    "city": "Dhanbad",
+    "country": "India",
+    "clues": [
+      "Coal and chaos mix here like a gritty Bollywood plot!",
+      "A dusty hub where mines and markets hustle."
+    ],
+    "fun_fact": [
+      "A dam nearby is so calm, even the fish nap!",
+      "Mines here dig deeper than your family drama."
+    ],
+    "trivia": [
+      "Street food here is so tasty, you’ll forgive the soot!",
+      "A park’s peacocks strut like they own the dust."
+    ]
+  },
+  {
+    "city": "Srinagar",
+    "country": "India",
+    "clues": [
+      "Lakes and boats vibe here like a floating paradise!",
+      "Hills hug you while shawls tempt your wallet."
+    ],
+    "fun_fact": [
+      "A garden blooms like it’s flexing for Instagram!",
+      "A houseboat floats like it’s too cool for land."
+    ],
+    "trivia": [
+      "Kahwa here warms your soul while the cold laughs!",
+      "A lake’s ducks judge your paddle skills."
+    ]
+  },
+  {
+    "city": "Ludhiana",
+    "country": "India",
+    "clues": [
+      "Textiles and tractors flex here like a rural runway!",
+      "A bustling spot where food and fabrics reign."
+    ],
+    "fun_fact": [
+      "A fort nearby sighs at your selfie struggles!",
+      "Factories churn out more than your uncle’s advice."
+    ],
+    "trivia": [
+      "Butter chicken here is so good, you’ll nap mid-bite!",
+      "A park’s peacocks strut like they own the grass."
+    ]
+  },
+  {
+    "city": "Asansol",
+    "country": "India",
+    "clues": [
+      "Coal and crowds mix here like a smoky party!",
+      "A gritty vibe where mines and markets hustle."
+    ],
+    "fun_fact": [
+      "A dam nearby is so calm, even the fish chill!",
+      "Industries dig deeper than your family gossip."
+    ],
+    "trivia": [
+      "Street food here is so tasty, you’ll ignore the dust!",
+      "A park’s pigeons judge your samosa stash."
+    ]
+  },
+  {
+    "city": "Rourkela",
+    "country": "India",
+    "clues": [
+      "Steel and hills vibe here like an industrial picnic!",
+      "A planned spot where factories and forests coexist."
+    ],
+    "fun_fact": [
+      "A park blooms like it’s flexing for selfies!",
+      "A river nearby watches you munch snacks."
+    ],
+    "trivia": [
+      "Momos here are so good, you’ll bribe the vendor!",
+      "A dam’s fish judge your picnic game."
+    ]
+  },
+  {
+    "city": "Durgapur",
+    "country": "India",
+    "clues": [
+      "Steel and sprawl mix here like a gritty suburb!",
+      "A planned vibe where factories and fields chill."
+    ],
+    "fun_fact": [
+      "A dam nearby is so calm, even the fish nap!",
+      "Industries churn out more than your uncle’s rants."
+    ],
+    "trivia": [
+      "Street food here is so tasty, you’ll forgive the dust!",
+      "A park’s peacocks strut like they own the grass."
+    ]
+  },
+  {
+    "city": "Siliguri",
+    "country": "India",
+    "clues": [
+      "A gateway where hills and tea flirt with you!",
+      "A busy spot where trade and traffic tango."
+    ],
+    "fun_fact": [
+      "A bridge sighs as you curse the chaos!",
+      "A forest nearby has monkeys plotting your snack heist."
+    ],
+    "trivia": [
+      "Tea here is so good, you’ll forgive the bumpy roads!",
+      "A hilltop view mocks your sweaty climb."
+    ]
+  },
+  {
+    "city": "Mangalore",
+    "country": "India",
+    "clues": [
+      "Beaches and biryani vibe here like a coastal party!",
+      "A port where spices and seafood steal the show."
+    ],
+    "fun_fact": [
+      "A lighthouse smirks at your sunburn struggles!",
+      "A river nearby watches you munch fish fry."
+    ],
+    "trivia": [
+      "Seafood here is so spicy, your tongue calls for mercy!",
+      "A beach laughs as you dodge the waves."
+    ]
+  },
+  {
+    "city": "Tiruchirappalli",
+    "country": "India",
+    "clues": [
+      "A rock fort looms like it’s judging your climbing skills!",
+      "Temples and trade vibe like a multitasking pro."
+    ],
+    "fun_fact": [
+      "A hilltop view stuns even the monkeys into silence!",
+      "A river flows by, smirking at your dosa obsession."
+    ],
+    "trivia": [
+      "Idlis here are so fluffy, you’ll forget the heat!",
+      "A temple’s bells wake you faster than your alarm."
+    ]
+  },
+  {
+    "city": "Salem",
+    "country": "India",
+    "clues": [
+      "Textiles and temples flex here like a busy auntie!",
+      "A chill spot where hills whisper ‘come visit’."
+    ],
+    "fun_fact": [
+      "A dam nearby is so calm, even the fish nap!",
+      "Industries churn out more than your uncle’s advice."
+    ],
+    "trivia": [
+      "Filter coffee here jolts you awake like a thunderclap!",
+      "A forest’s monkeys judge your picnic stash."
+    ]
+  },
+  {
+    "city": "Erode",
+    "country": "India",
+    "clues": [
+      "Textiles and turmeric vibe here like a spicy market!",
+      "Rivers rush through like they’re late for tea."
+    ],
+    "fun_fact": [
+      "A bridge sighs as you curse the traffic!",
+      "A temple sits pretty, watching you munch snacks."
+    ],
+    "trivia": [
+      "Dosas here are so crisp, they crunch louder than your boss!",
+      "A riverbank smirks at your selfie struggles."
+    ]
+  },
+  {
+    "city": "Kollam",
+    "country": "India",
+    "clues": [
+      "Backwaters and boats vibe here like a lazy paradise!",
+      "A port where spices and seafood steal the show."
+    ],
+    "fun_fact": [
+      "A lighthouse smirks at your sunburn struggles!",
+      "A lake nearby watches you sip coconut water."
+    ],
+    "trivia": [
+      "Fish curry here burns your soul in the best way!",
+      "A beach laughs as you dodge the waves."
+    ]
+  },
+  {
+    "city": "Kottayam",
+    "country": "India",
+    "clues": [
+      "Rubber and rivers flex here like a chill combo!",
+      "A quiet spot where backwaters whisper secrets."
+    ],
+    "fun_fact": [
+      "A church glows like it’s ready for a postcard!",
+      "A lake nearby is so calm, even the fish nap."
+    ],
+    "trivia": [
+      "Appam here is so soft, you’ll forget the heat!",
+      "A boat ride feels like a timeout from chaos."
+    ]
+  },
+  {
+    "city": "Thrissur",
+    "country": "India",
+    "clues": [
+      "Festivals here roar louder than your uncle’s snoring!",
+      "Temples and trade vibe like a multitasking pro."
+    ],
+    "fun_fact": [
+      "A hilltop temple stares down at your dosa obsession!",
+      "A festival turns the streets into an elephant party."
+    ],
+    "trivia": [
+      "Sadya here is so big, you’ll nap before dessert!",
+      "A river smirks at your selfie struggles."
+    ]
+  },
+  {
+    "city": "Kozhikode",
+    "country": "India",
+    "clues": [
+      "Beaches and biryani vibe here like a coastal feast!",
+      "A port where spices and history mix it up."
+    ],
+    "fun_fact": [
+      "A lighthouse smirks at your sunburn struggles!",
+      "A river nearby watches you munch fish fry."
+    ],
+    "trivia": [
+      "Halwa here is so sweet, your teeth send a thank-you note!",
+      "A beach laughs as you dodge the waves."
+    ]
+  },
+  {
+    "city": "Aligarh",
+    "country": "India",
+    "clues": [
+      "Locks and learning flex here like an odd duo!",
+      "A chaotic spot where history and hustle collide."
+    ],
+    "fun_fact": [
+      "A fort sighs at your selfie struggles!",
+      "A university churns out more than your uncle’s advice."
+    ],
+    "trivia": [
+      "Kebabs here are so good, you’ll forgive the dust!",
+      "A park’s pigeons judge your samosa stash."
+    ]
+  },
+  {
+    "city": "Moradabad",
+    "country": "India",
+    "clues": [
+      "Brass and bustle mix here like a shiny chaos!",
+      "A crafty hub where markets hum all day."
+    ],
+    "fun_fact": [
+      "A bridge sighs as you curse the traffic!",
+      "Crafts here shine brighter than your future."
+    ],
+    "trivia": [
+      "Street food here is so tasty, you’ll ignore the dust!",
+      "A park’s peacocks strut like they own the grass."
+    ]
+  },
+  {
+    "city": "Saharanpur",
+    "country": "India",
+    "clues": [
+      "Wood and hustle vibe here like a crafty chaos!",
+      "A quiet spot where markets and mangoes reign."
+    ],
+    "fun_fact": [
+      "A garden blooms like it’s flexing for selfies!",
+      "Crafts here carve out more than your uncle’s rants."
+    ],
+    "trivia": [
+      "Mangoes here are so juicy, you’ll forgive the sticky hands!",
+      "A park’s pigeons judge your chaat stash."
+    ]
+  },
+  {
+    "city": "Gorakhpur",
+    "country": "India",
+    "clues": [
+      "Temples and trade flex here like a spiritual market!",
+      "A chaotic spot where rivers and roads collide."
+    ],
+    "fun_fact": [
+      "A temple glows like it’s ready for a postcard!",
+      "A river nearby watches you munch snacks."
+    ],
+    "trivia": [
+      "Litti chokha here is so good, you’ll nap mid-bite!",
+      "A park’s peacocks strut like they own the grass."
+    ]
+  },
+  {
+    "city": "Bareilly",
+    "country": "India",
+    "clues": [
+      "Crafts and chaos mix here like a busy bazaar!",
+      "A chill spot where history and hustle vibe."
+    ],
+    "fun_fact": [
+      "A temple sits pretty, watching you munch snacks!",
+      "A market churns out more than your uncle’s advice."
+    ],
+    "trivia": [
+      "Jalebi here is so sweet, your dentist will send a bill!",
+      "A park’s pigeons judge your samosa stash."
+    ]
+  },
+  {
+    "city": "Firozabad",
+    "country": "India",
+    "clues": [
+      "Glass and glitz flex here like a shiny chaos!",
+      "A crafty hub where markets hum all day."
+    ],
+    "fun_fact": [
+      "A bridge sighs as you curse the traffic!",
+      "Bangles here sparkle brighter than your future."
+    ],
+    "trivia": [
+      "Street food here is so tasty, you’ll ignore the dust!",
+      "A park’s peacocks strut like they own the grass."
+    ]
+  },
+  {
+    "city": "Mathura",
+    "country": "India",
+    "clues": [
+      "Temples and sweets vibe here like a divine dessert!",
+      "A spiritual spot where chaos and calm collide."
+    ],
+    "fun_fact": [
+      "A river flows by, smirking at your selfie struggles!",
+      "A temple glows like it’s ready for a postcard."
+    ],
+    "trivia": [
+      "Peda here is so sweet, your teeth send a thank-you note!",
+      "A park’s pigeons judge your chaat stash."
+    ]
+  },
+  {
+    "city": "Jhansi",
+    "country": "India",
+    "clues": [
+      "A fort looms like it’s ready for a Bollywood siege!",
+      "History and heat wrestle for your attention."
+    ],
+    "fun_fact": [
+      "A queen fought here—talk about starting drama!",
+      "A hilltop view mocks your sweaty climb."
+    ],
+    "trivia": [
+      "Samosas here are so good, you’ll fight your friend for more!",
+      "A park’s peacocks strut like they own the grass."
+    ]
+  },
+  {
+    "city": "Bikaner",
+    "country": "India",
+    "clues": [
+      "A fort flexes like it’s judging your sunscreen game!",
+      "Deserts and snacks vibe like a sandy feast."
+    ],
+    "fun_fact": [
+      "A palace turned hotel is so fancy, even the ghosts dress up!",
+      "A desert nearby dares you to sweat it out."
+    ],
+    "trivia": [
+      "Bhujia here is so addictive, your diet cries mercy!",
+      "A clock tower ticks while you dodge camels."
+    ]
+  },
+  {
+    "city": "Ajmer",
+    "country": "India",
+    "clues": [
+      "A shrine glows like it’s flexing spiritual Wi-Fi!",
+      "Hills hug you while history whispers secrets."
+    ],
+    "fun_fact": [
+      "A lake nearby is so calm, even the fish meditate!",
+      "A fort sits high, judging your hiking skills."
+    ],
+    "trivia": [
+      "Kebabs here are so good, you’ll forgive the heat!",
+      "A hilltop view mocks your sweaty struggle."
+    ]
+  },
+  {
+    "city": "Kota",
+    "country": "India",
+    "clues": [
+      "Students and stress vibe here like a pressure cooker!",
+      "A riverbank where books and biryani collide."
+    ],
+    "fun_fact": [
+      "A palace sits pretty, watching you munch snacks!",
+      "A river flows by, smirking at your selfie struggles."
+    ],
+    "trivia": [
+      "Kachori here is so tasty, you’ll forget your exams!",
+      "A park’s peacocks strut like they own the grass."
+    ]
+  },
+  {
+    "city": "Darjeeling",
+    "country": "India",
+    "clues": [
+      "Hills and tea flirt with you like a misty romance!",
+      "A chill spot where toy trains chug along."
+    ],
+    "fun_fact": [
+      "A hilltop view stuns even the monkeys into silence!",
+      "A zoo’s pandas judge your selfie game."
+    ],
+    "trivia": [
+      "Tea here is so good, you’ll forgive the chilly mornings!",
+      "A ropeway mocks your fear of heights."
+    ]
+  },
+  {
+    "city": "Gangtok",
+    "country": "India",
+    "clues": [
+      "Hills hug you while monasteries flex their zen!",
+      "A chill spot where clouds and chaos coexist."
+    ],
+    "fun_fact": [
+      "A waterfall roars louder than your uncle at a wedding!",
+      "A ropeway dares you to look down without screaming."
+    ],
+    "trivia": [
+      "Momos here are so juicy, you’ll fight your friend for more!",
+      "A hilltop view mocks your sweaty climb."
+    ]
+  },
+  {
+    "city": "Imphal",
+    "country": "India",
+    "clues": [
+      "Hills and history vibe here like a quiet epic!",
+      "A valley where markets and monasteries chill."
+    ],
+    "fun_fact": [
+      "A lake floats plants like it’s too cool for land!",
+      "A palace sits pretty, watching you munch snacks."
+    ],
+    "trivia": [
+      "Chilli chutney here burns your soul and wins your heart!",
+      "A park’s peacocks strut like they own the grass."
+    ]
+  },
+  {
+    "city": "Aizawl",
+    "country": "India",
+    "clues": [
+      "Hills stack up like a divine Lego set!",
+      "A chill spot where clouds and chaos coexist."
+    ],
+    "fun_fact": [
+      "A hilltop view stuns even the monkeys into silence!",
+      "A market hums louder than your uncle’s rants."
+    ],
+    "trivia": [
+      "Pork here is so tasty, you’ll forgive the steep roads!",
+      "A park’s pigeons judge your momo stash."
+    ]
+  },
+  {
+    "city": "Shillong",
+    "country": "India",
+    "clues": [
+      "Hills and rain vibe here like a misty party!",
+      "A chill spot where music and markets hum."
+    ],
+    "fun_fact": [
+      "A waterfall roars louder than your uncle at a wedding!",
+      "A lake nearby is so calm, even the fish nap."
+    ],
+    "trivia": [
+      "Beef momos here are so good, you’ll bribe the vendor!",
+      "A hilltop view mocks your sweaty climb."
+    ]
   }
 ]
