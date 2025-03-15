@@ -2,6 +2,7 @@
 
 import QuizBox from "@/components/QuizBox";
 import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
+import { useParams } from "next/navigation";
 import { useState } from "react";
 
 interface Player {
@@ -11,17 +12,15 @@ interface Player {
 	losses: number;
 }
 
-export default function ChallengePage({
-	params,
-}: {
-	params: Promise<{ id: string }>;
-}) {
-	const [userName, setUserName] = useState("Guest");
+export default function ChallengePage() {
+	const [userName] = useState("Guest");
 	const [wins, setWins] = useState(0);
 	const [losses, setLosses] = useState(0);
 
+	const params = useParams();
+
 	// Sample leaderboard data (would come from API in a real app)
-	const [leaderboard, setLeaderboard] = useState<Player[]>([
+	const [leaderboard] = useState<Player[]>([
 		{ id: 1, name: "JohnDoe", wins: 42, losses: 10 },
 		{ id: 2, name: "JaneSmith", wins: 38, losses: 5 },
 		{ id: 3, name: "BobJohnson", wins: 27, losses: 15 },

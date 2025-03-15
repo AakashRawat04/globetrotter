@@ -16,7 +16,7 @@ import Link from "next/link";
 import { useState } from "react";
 
 export default function ChallengePage() {
-	const [challengeCode, setChallengeCode] = useState(
+	const [challengeCode] = useState(
 		"GEO-" + Math.random().toString(36).substring(2, 8).toUpperCase()
 	);
 	const [copied, setCopied] = useState(false);
@@ -98,7 +98,7 @@ export default function ChallengePage() {
 
 						<div className="space-y-2">
 							<Label htmlFor="friend-code" className="text-white">
-								Or enter friend's code
+								Or enter friends code
 							</Label>
 							<Input
 								id="friend-code"
