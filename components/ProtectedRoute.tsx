@@ -1,45 +1,53 @@
 "use client";
 
 import useAuthStore from "@/store/useAuthStore";
-import { fetchApi } from "@/utils/api";
 import { useRouter } from "next/navigation";
-import { useEffect } from "react";
+import { ReactNode, useEffect, useState } from "react";
 
-export default function ProtectedRoute({
-	children,
-}: {
-	children: React.ReactNode;
-}) {
-	const { isAuthenticated, token, updateUser, logout } = useAuthStore();
+interface ProtectedRouteProps {
+	children: ReactNode;
+}
+
+const ProtectedRoute = ({ children }: ProtectedRouteProps) => {
+	const user = useAuthStore((state) => state.user);
 	const router = useRouter();
+	const [isChecking, setIsChecking] = useState(true);
 
 	useEffect(() => {
-		// Redirect to auth page if not authenticated
-		if (!isAuthenticated) {
-			router.push("/auth");
-			return;
-		}
-
-		// Verify token and get updated user info
-		const verifyToken = async () => {
-			try {
-				const data = await fetchApi("/user/me", { token });
-				updateUser(data.user);
-			} catch (error) {
-				console.error("Token validation failed:", error);
-				// If token is invalid, log out the user
-				logout();
+		// Check auth status
+		const checkAuth = () => {
+			if (!user) {
 				router.push("/auth");
+			} else {
+				setIsChecking(false);
 			}
 		};
 
-		verifyToken();
-	}, [isAuthenticated, token, updateUser, logout, router]);
+		checkAuth();
+		// Small timeout to ensure store is hydrated
+		const timer = setTimeout(() => {
+			if (!user) {
+				router.push("/auth");
+			}
+			setIsChecking(false);
+		}, 500);
 
-	// Don't render anything while checking authentication
-	if (!isAuthenticated) {
-		return null;
+		return () => clearTimeout(timer);
+	}, [user, router]);
+
+	if (isChecking) {
+		return (
+			<div className="min-h-screen flex items-center justify-center">
+				<div className="animate-pulse text-amber-500">Authenticating...</div>
+			</div>
+		);
+	}
+
+	if (!user) {
+		return null; // Will redirect in useEffect
 	}
 
 	return <>{children}</>;
-}
+};
+
+export default ProtectedRoute;

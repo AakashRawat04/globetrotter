@@ -1,27 +1,28 @@
 import Image from "next/image";
 import React from "react";
 
-interface ClueBoxProps {
+interface TriviaBoxProps {
 	clueText: string;
 	className?: string;
 }
 
-const ClueBox: React.FC<ClueBoxProps> = ({ clueText, className = "" }) => {
+const TriviaBox: React.FC<TriviaBoxProps> = ({ clueText, className = "" }) => {
 	return (
 		<div
-			className={`text-black p-6 relative flex flex-col items-center justify-center min-h-[200px] ${className}`}
+			className={`text-black p-8 relative flex flex-col items-center justify-center min-h-[250px] ${className}`}
 			style={{
 				backgroundImage: "url('/images/scroll.png')",
-				backgroundSize: "contain",
+				backgroundSize: "cover",
 				backgroundPosition: "center",
 				backgroundRepeat: "no-repeat",
+				width: "200px",
 			}}
 		>
-			<div className="relative z-10 text-center max-w-[150px] p-3">
-				<h4 className="text-amber-800 font-bold mb-3 text-center text-lg">
+			<div className="relative z-10 text-center max-w-[200px] p-4">
+				<h4 className="text-amber-800 font-bold mb-4 text-center text-xl">
 					Clue
 				</h4>
-				<p className="text-sm font-medium">{clueText}</p>
+				<p className="text-base font-medium">{clueText}</p>
 			</div>
 
 			{/* Thinking meme image positioned at bottom right */}
@@ -29,8 +30,8 @@ const ClueBox: React.FC<ClueBoxProps> = ({ clueText, className = "" }) => {
 				<Image
 					src="/images/dankmemerthinking.png"
 					alt="Thinking meme"
-					width={60}
-					height={60}
+					width={80}
+					height={80}
 					className="object-contain"
 				/>
 			</div>
@@ -38,4 +39,4 @@ const ClueBox: React.FC<ClueBoxProps> = ({ clueText, className = "" }) => {
 	);
 };
 
-export default ClueBox;
+export default TriviaBox;

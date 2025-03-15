@@ -87,19 +87,6 @@ export default function RegisterForm({ onSuccess }: RegisterFormProps) {
 			</div>
 
 			<div className="space-y-2">
-				<Label htmlFor="email">Email</Label>
-				<Input
-					id="email"
-					name="email"
-					type="email"
-					placeholder="Enter your email"
-					value={formData.email}
-					onChange={handleChange}
-					required
-				/>
-			</div>
-
-			<div className="space-y-2">
 				<Label htmlFor="password">Password</Label>
 				<Input
 					id="password"

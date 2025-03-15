@@ -4,21 +4,15 @@ interface ApiOptions {
 	method?: string;
 	headers?: Record<string, string>;
 	body?: object;
-	token?: string | null;
 }
 
 export async function fetchApi(endpoint: string, options: ApiOptions = {}) {
-	const { method = "GET", headers = {}, body, token } = options;
+	const { method = "GET", headers = {}, body } = options;
 
 	const requestHeaders: Record<string, string> = {
 		"Content-Type": "application/json",
 		...headers,
 	};
-
-	// Add auth token if provided
-	if (token) {
-		requestHeaders.Authorization = `Bearer ${token}`;
-	}
 
 	const config: RequestInit = {
 		method,

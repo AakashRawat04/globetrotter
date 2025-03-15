@@ -2,98 +2,146 @@
 
 import { Button } from "@/components/ui/button";
 import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
+import { validateAnswer } from "@/services/api.service";
+import useAuthStore from "@/store/useAuthStore";
+import useGameStore from "@/store/useGameStore";
 import { RefreshCw } from "lucide-react";
-import ClueBox from "./ClueBox";
+import Image from "next/image";
+import { useState } from "react";
+import TriviaBox from "./TriviaBox";
+import { Input } from "./ui/input";
 
 interface QuizBoxProps {
 	userName: string;
-	onCorrectAnswer?: () => void;
-	onIncorrectAnswer?: () => void;
+	clues: string[];
+	trivia: string[];
+	qbid: string;
 }
 
-const QuizBox: React.FC<QuizBoxProps> = ({
-	userName,
-	onCorrectAnswer = () => {},
-	onIncorrectAnswer = () => {},
-}) => {
-	// Sample question data (would come from API in a real app)
-	const questionData = {
-		question: "What is the capital of France?",
-		options: ["London", "Berlin", "Paris", "Madrid"],
-		correctAnswer: "Paris",
-	};
+const QuizBox: React.FC<QuizBoxProps> = ({ userName, clues, trivia, qbid }) => {
+	const [guess, setGuess] = useState("");
+	const [currentClueIndex, setCurrentClueIndex] = useState(0);
+	const [answerStatus, setAnswerStatus] = useState<
+		"waiting" | "correct" | "incorrect"
+	>("waiting");
+	const { token } = useAuthStore();
+	const { setWins, setLoss } = useGameStore();
 
-	// Sample clues (would come from API in a real app)
-	const clues = {
-		leftClue: "This country is known for its famous tower.",
-		rightClue: "This city hosts the Louvre Museum.",
-	};
+	// guess button click handler
+	const handleGuessClick = async () => {
+		// Handle guess button click logic here
+		const response = await validateAnswer(qbid, guess, token!);
+		if (!response) {
+			console.error("Error validating answer");
+			return;
+		}
 
-	const handleAnswerClick = (option: string) => {
-		if (option === questionData.correctAnswer) {
-			onCorrectAnswer();
+		console.log("Response from validateAnswer:", response);
+		setWins(response.data.wins);
+		setLoss(response.data.loss);
+
+		if (response.correct) {
+			setAnswerStatus("correct");
+			// Correct answer logic
 		} else {
-			onIncorrectAnswer();
+			setAnswerStatus("incorrect");
+			// Incorrect answer logic
 		}
 	};
 
+	// rephrase button click handler to cycle through clues
+	const handleRephrase = () => {
+		// Move to the next clue in the array, or cycle back to the beginning
+		setCurrentClueIndex((prevIndex) => (prevIndex + 1) % clues.length);
+	};
+
 	return (
-		<div className="flex flex-row items-center justify-center gap-8 md:gap-12 w-full max-w-7xl mx-auto">
-			{/* Left Clue */}
-			<ClueBox
-				clueText={clues.leftClue}
+		<div className="flex flex-row items-center justify-center gap-10 md:gap-16 w-full max-w-7xl mx-auto">
+			<TriviaBox
+				clueText={trivia[0]}
 				className="hidden md:block flex-shrink-0"
 			/>
 
 			{/* Quiz Card */}
-			<Card className="w-full max-w-md mx-auto bg-black/70 text-white border-none">
-				<CardHeader>
-					<div className="text-center mb-2">
-						<h3 className="text-xl font-bold text-amber-400">
+			<Card className="w-full max-w-xl mx-auto bg-black/70 text-white border-none p-2">
+				<CardHeader className="p-6">
+					<div className="text-center mb-4">
+						<h3 className="text-2xl font-bold text-amber-400">
 							Hello, {userName}!
 						</h3>
 					</div>
-					<CardTitle className="text-lg font-bold text-center">
-						{questionData.question}
+					<CardTitle className="text-xl font-bold text-center">
+						{clues[currentClueIndex] || "No clues available"}
 					</CardTitle>
-				</CardHeader>
-				<CardContent className="space-y-4">
-					<div className="flex justify-center mb-4">
+					<div className="flex justify-center mt-4">
 						<Button
 							variant="outline"
-							size="sm"
-							className="bg-transparent text-white border-white hover:bg-white/20 hover:text-white"
+							size="lg"
+							className="bg-transparent text-white border-white hover:bg-white/20 hover:text-white text-base"
+							onClick={handleRephrase}
 						>
-							<RefreshCw className="mr-2 h-4 w-4" />
-							Refresh Question
+							<RefreshCw className={`mr-2 h-5 w-5`} />
+							Rephrase
 						</Button>
 					</div>
-					<div className="flex flex-row justify-center gap-3">
-						{questionData.options.map((option, index) => (
-							<Button
-								key={index}
-								variant="outline"
-								className="justify-center h-12 text-center bg-transparent text-white border-white hover:bg-white/20 hover:text-white"
-								onClick={() => handleAnswerClick(option)}
-							>
-								{option}
-							</Button>
-						))}
+				</CardHeader>
+				<CardContent className="space-y-6 p-6">
+					{/* Display different images based on answer status */}
+					<div className="flex justify-center  mb-2">
+						{answerStatus === "waiting" && (
+							<Image
+								width={120}
+								height={120}
+								src="/images/waiting.png"
+								alt="Waiting"
+							/>
+						)}
+						{answerStatus === "correct" && (
+							<Image
+								width={120}
+								height={120}
+								src="/images/correct.png"
+								alt="Correct"
+							/>
+						)}
+						{answerStatus === "incorrect" && (
+							<Image
+								width={220}
+								height={220}
+								src="/images/aww-hell-nah.png"
+								alt="Incorrect"
+							/>
+						)}
 					</div>
-
-					{/* Mobile Clues (only shown on small screens) */}
-					<div className="md:hidden space-y-3 mt-6">
-						<ClueBox clueText={clues.leftClue} />
-						<ClueBox clueText={clues.rightClue} />
+					{/* Answer input with guess button */}
+					<div className="flex flex-col gap-4">
+						<div className="flex items-center gap-3">
+							<Input
+								className="flex-1 h-12 text-lg"
+								placeholder="Your answer..."
+								value={guess}
+								onChange={(e) => setGuess(e.target.value)}
+							/>
+							<Button
+								variant="default"
+								className="bg-amber-500 hover:bg-amber-600 text-black h-12 text-lg px-6"
+								onClick={handleGuessClick}
+							>
+								Guess
+							</Button>
+						</div>
+						<Button
+							variant="outline"
+							className="bg-transparent text-white border-white hover:bg-white/20 hover:text-white text-base w-full"
+							onClick={() => window.location.reload()}
+						>
+							Next Question
+						</Button>
 					</div>
 				</CardContent>
 			</Card>
 
-			{/* Right Clue */}
-			<ClueBox
-				clueText={clues.rightClue}
-				className="hidden md:block flex-shrink-0"
-			/>
+			<TriviaBox clueText={trivia[1]} className="md:block flex-shrink-0" />
 		</div>
 	);
 };

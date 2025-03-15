@@ -1,16 +1,22 @@
 export interface User {
 	userid: string;
 	username: string;
-	email?: string;
 	wins: number;
 	loss: number;
 }
 
 export interface Question {
-	id: string;
-	question: string;
-	clues?: string[];
-	difficulty?: string;
+	qbid: string;
+	clues: string[];
+	fun_fact: string[];
+	trivia: string[];
+}
+
+export interface Challenge {
+	challengeid: string;
+	userid: string;
+	wins: number;
+	loss: number;
 }
 
 export interface LoginCredentials {
@@ -20,10 +26,4 @@ export interface LoginCredentials {
 
 export interface RegisterData extends LoginCredentials {
 	email: string;
-}
-
-export interface ApiResponse<T> {
-	message: string;
-	data?: T;
-	error?: string;
 }
