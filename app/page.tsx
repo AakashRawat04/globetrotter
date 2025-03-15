@@ -1,34 +1,21 @@
 "use client";
 
+import ProtectedRoute from "@/components/ProtectedRoute";
 import QuizBox from "@/components/QuizBox";
 import ShareChallengeDialog from "@/components/ShareChallengeDialog";
 import { Button } from "@/components/ui/button";
-import {
-	Dialog,
-	DialogContent,
-	DialogDescription,
-	DialogFooter,
-	DialogHeader,
-	DialogTitle,
-} from "@/components/ui/dialog";
-import { Input } from "@/components/ui/input";
-import { Users } from "lucide-react";
+import useAuthStore from "@/store/useAuthStore";
+import { LogOut, Users } from "lucide-react";
+import { useRouter } from "next/navigation";
 import { useState } from "react";
 
 export default function Home() {
-	const [name, setName] = useState("");
-	const [showModal, setShowModal] = useState(true);
-	const [inputName, setInputName] = useState("");
-	const [wins, setWins] = useState(0);
-	const [losses, setLosses] = useState(0);
+	const user = useAuthStore((state) => state.user);
+	const logout = useAuthStore((state) => state.logout);
+	const [wins, setWins] = useState(user?.wins || 0);
+	const [losses, setLosses] = useState(user?.loss || 0);
 	const [showShareDialog, setShowShareDialog] = useState(false);
-
-	const handleStartQuiz = () => {
-		if (inputName.trim()) {
-			setName(inputName);
-			setShowModal(false);
-		}
-	};
+	const router = useRouter();
 
 	const handleCorrectAnswer = () => {
 		setWins((prev) => prev + 1);
@@ -42,20 +29,22 @@ export default function Home() {
 		setShowShareDialog(true);
 	};
 
-	// Calculate if name input is valid (not empty after trimming)
-	const isNameValid = inputName.trim().length > 0;
+	const handleLogout = () => {
+		logout();
+		router.push("/auth");
+	};
 
 	return (
-		<div className="min-h-screen flex flex-col bg-cover bg-opacity-50">
-			{/* Share Challenge Dialog */}
-			<ShareChallengeDialog
-				isOpen={showShareDialog}
-				onClose={() => setShowShareDialog(false)}
-				playerName={name || inputName}
-			/>
+		<ProtectedRoute>
+			<div className="min-h-screen flex flex-col bg-cover bg-opacity-50">
+				{/* Share Challenge Dialog */}
+				<ShareChallengeDialog
+					isOpen={showShareDialog}
+					onClose={() => setShowShareDialog(false)}
+					playerName={user?.username || ""}
+				/>
 
-			{/* Header with website name, challenge button, and score */}
-			{!showModal && (
+				{/* Header with website name, challenge button, and score */}
 				<header className="w-full p-4 flex justify-between items-center bg-black/50 backdrop-blur-sm fixed top-0 z-30">
 					<div className="text-amber-400 font-bold text-xl md:text-2xl">
 						Globetrotter
@@ -82,56 +71,30 @@ export default function Home() {
 								<span className="font-semibold mr-1">Losses:</span> {losses}
 							</div>
 						</div>
+
+						{/* Logout Button */}
+						<Button
+							onClick={handleLogout}
+							size="sm"
+							variant="ghost"
+							className="text-white hover:bg-red-600/20"
+						>
+							<LogOut className="mr-2 h-4 w-4" />
+							Logout
+						</Button>
 					</div>
 				</header>
-			)}
 
-			{/* Main Content */}
-			<div className="flex-1 flex items-center justify-center p-4 md:px-12 pt-20">
-				{/* Name Modal */}
-				<Dialog open={showModal} onOpenChange={setShowModal}>
-					<DialogContent className="sm:max-w-md">
-						<DialogHeader>
-							<DialogTitle className="text-xl">
-								Welcome to Globetrotter!
-							</DialogTitle>
-							<DialogDescription>
-								Please enter your name to start the quiz
-							</DialogDescription>
-						</DialogHeader>
-						<div className="flex items-center space-x-2 py-4">
-							<Input
-								placeholder="Enter your name"
-								value={inputName}
-								onChange={(e) => setInputName(e.target.value)}
-								className="flex-1"
-							/>
-						</div>
-						<DialogFooter className="flex flex-col sm:flex-row gap-2">
-							<Button onClick={handleStartQuiz} disabled={!isNameValid}>
-								Play Solo
-							</Button>
-							<Button
-								onClick={handleChallengeClick}
-								variant="outline"
-								className="bg-amber-500 text-black hover:bg-amber-600 hover:text-black"
-								disabled={!isNameValid}
-							>
-								Challenge a Friend
-							</Button>
-						</DialogFooter>
-					</DialogContent>
-				</Dialog>
-
-				{/* Quiz Interface with Clues */}
-				{!showModal && (
+				{/* Main Content */}
+				<div className="flex-1 flex items-center justify-center p-4 md:px-12 pt-20">
+					{/* Quiz Interface with Clues */}
 					<QuizBox
-						userName={name}
+						userName={user?.username || ""}
 						onCorrectAnswer={handleCorrectAnswer}
 						onIncorrectAnswer={handleIncorrectAnswer}
 					/>
-				)}
+				</div>
 			</div>
-		</div>
+		</ProtectedRoute>
 	);
 }
