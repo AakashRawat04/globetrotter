@@ -1,6 +1,7 @@
 import bcrypt from "bcrypt";
 import { Request, Response } from "express";
 import jwt from "jsonwebtoken";
+import { AuthRequest } from "../middlewares/auth.middleware";
 import { userService } from "../services/db.service";
 
 export const register = async (req: Request, res: Response) => {
@@ -97,6 +98,41 @@ export const login = async (req: Request, res: Response) => {
 		});
 	} catch (error) {
 		console.error("Login error:", error);
+		res.status(500).json({ message: "Internal server error" });
+	}
+};
+
+export const getUserProfile = async (req: AuthRequest, res: Response) => {
+	try {
+		// The user ID should be available from the auth middleware
+		if (!req.user) {
+			return res.status(401).json({ message: "Unauthorized" });
+		}
+
+		const userId = req.user.userid;
+
+		if (!userId) {
+			return res.status(401).json({ message: "Unauthorized" });
+		}
+
+		// Fetch user details
+		const user = await userService.getUserById(userId);
+
+		if (!user) {
+			return res.status(404).json({ message: "User not found" });
+		}
+
+		// Return user profile without sensitive information
+		res.status(200).json({
+			user: {
+				userid: user.userid,
+				username: user.username,
+				wins: user.wins,
+				loss: user.loss,
+			},
+		});
+	} catch (error) {
+		console.error("Get user profile error:", error);
 		res.status(500).json({ message: "Internal server error" });
 	}
 };

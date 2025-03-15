@@ -20,7 +20,6 @@ export interface Challenge {
 	userid: string;
 	wins: number;
 	loss: number;
-	created_at?: string;
 }
 
 export interface Database {

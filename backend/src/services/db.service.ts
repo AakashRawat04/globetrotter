@@ -98,7 +98,7 @@ export const challengeService = {
 		};
 
 		const { data, error } = await supabase
-			.from("challenges")
+			.from("challenge")
 			.insert([challenge])
 			.select()
 			.single();
@@ -113,7 +113,7 @@ export const challengeService = {
 
 	async getChallengeById(challengeid: string): Promise<Challenge[] | null> {
 		const { data, error } = await supabase
-			.from("challenges")
+			.from("challenge")
 			.select("*")
 			.eq("challengeid", challengeid);
 

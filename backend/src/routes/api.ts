@@ -1,5 +1,9 @@
 import express, { Request, Response, Router } from "express";
-import { login, register } from "../controllers/auth.controller";
+import {
+	getUserProfile,
+	login,
+	register,
+} from "../controllers/auth.controller";
 import {
 	createChallenge,
 	getChallengeById,
@@ -20,10 +24,11 @@ router.get("/test", (req: Request, res: Response) => {
 // Auth routes
 router.post("/register", register);
 router.post("/login", login);
+router.get("/user/me", authMiddleware, getUserProfile);
 
 // Question routes
-router.get("/guess", getRandomQuestion);
-router.post("/validate", validateAnswer);
+router.get("/guess", authMiddleware, getRandomQuestion);
+router.post("/validate", authMiddleware, validateAnswer);
 
 // Challenge routes - protected with auth middleware
 router.post("/challenge/create", authMiddleware, createChallenge);
