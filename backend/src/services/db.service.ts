@@ -46,16 +46,48 @@ export const userService = {
 
 		return data as User;
 	},
+
+	async updateUserStats(
+		userid: string,
+		wins: number,
+		loss: number
+	): Promise<User | null> {
+		const { data, error } = await supabase
+			.from("users")
+			.update({ wins, loss })
+			.eq("userid", userid)
+			.select("userid, username, wins, loss")
+			.single();
+
+		if (error) {
+			console.error("Error updating user stats:", error);
+			return null;
+		}
+
+		return data as User;
+	},
 };
 
 export const questionService = {
 	async getRandomQuestion(): Promise<QuestionBank | null> {
-		// Get a random question from the question bank
+		// First, get the count of questions in the database
+		const { count, error: countError } = await supabase
+			.from("question_bank")
+			.select("*", { count: "exact", head: true });
+
+		if (countError || !count) {
+			console.error("Error fetching question count:", countError);
+			return null;
+		}
+
+		// Generate a random index between 0 and count-1
+		const randomIndex = Math.floor(Math.random() * count);
+
+		// Fetch the question at the random index
 		const { data, error } = await supabase
 			.from("question_bank")
 			.select("*")
-			.order("qbid", { ascending: false })
-			.limit(1);
+			.range(randomIndex, randomIndex);
 
 		if (error || !data.length) {
 			console.error("Error fetching random question:", error);

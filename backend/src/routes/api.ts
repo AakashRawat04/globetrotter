@@ -3,6 +3,7 @@ import {
 	getUserProfile,
 	login,
 	register,
+	updateUserStats,
 } from "../controllers/auth.controller";
 import {
 	createChallenge,
@@ -25,6 +26,7 @@ router.get("/test", (req: Request, res: Response) => {
 router.post("/register", register);
 router.post("/login", login);
 router.get("/user/me", authMiddleware, getUserProfile);
+router.put("/user/stats", authMiddleware, updateUserStats);
 
 // Question routes
 router.get("/guess", authMiddleware, getRandomQuestion);

@@ -136,3 +136,33 @@ export const getUserProfile = async (req: AuthRequest, res: Response) => {
 		res.status(500).json({ message: "Internal server error" });
 	}
 };
+
+export const updateUserStats = async (req: AuthRequest, res: Response) => {
+	try {
+		const user = req.user; // From auth middleware
+		if (!user) {
+			return res.status(401).json({ message: "Unauthorized" });
+		}
+		const userid = user.userid;
+		const { wins, losses } = req.body;
+
+		if (wins === undefined || losses === undefined) {
+			return res.status(400).json({ message: "Wins and losses are required" });
+		}
+
+		// Update the user stats
+		const updatedUser = await userService.updateUserStats(userid, wins, losses);
+
+		if (!updatedUser) {
+			return res.status(404).json({ message: "User not found" });
+		}
+
+		res.status(200).json({
+			message: "User stats updated successfully",
+			data: updatedUser,
+		});
+	} catch (error) {
+		console.error("Error updating user stats:", error);
+		res.status(500).json({ message: "Internal server error" });
+	}
+};
