@@ -1,6 +1,7 @@
 "use client";
 
 import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
+import Link from "next/link";
 import { useParams } from "next/navigation";
 import { useState } from "react";
 
@@ -31,9 +32,9 @@ export default function ChallengePage() {
 		<div className="min-h-screen flex flex-col bg-cover bg-opacity-50">
 			{/* Header with website name and score */}
 			<header className="w-full p-4 flex justify-between items-center bg-black/50 backdrop-blur-sm fixed top-0 z-30">
-				<div className="text-amber-400 font-bold text-xl md:text-2xl">
+				<Link href="/" className="text-amber-400 font-bold text-xl md:text-2xl">
 					Globetrotter
-				</div>
+				</Link>
 				<div className="flex space-x-4 text-white">
 					<div className="bg-green-800/70 px-3 py-1 rounded-md flex items-center">
 						<span className="font-semibold mr-1">Wins:</span> {wins}

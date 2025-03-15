@@ -96,3 +96,30 @@ export const getCorrectAnswer = async (
 		console.error("Error getting correct answer:", error);
 	}
 };
+
+export const createChallange = async (
+	token: string
+): Promise<
+	| {
+			challenge: {
+				challengeid: string;
+				userid: string;
+				wins: number;
+				loss: number;
+			};
+	  }
+	| undefined
+> => {
+	try {
+		const data = await fetchApi("/challenge/create", {
+			method: "POST",
+			headers: {
+				Authorization: `Bearer ${token}`,
+			},
+		});
+		console.log("Data from createChallenge:", data);
+		return data;
+	} catch (error) {
+		console.error("Error creating challenge:", error);
+	}
+};

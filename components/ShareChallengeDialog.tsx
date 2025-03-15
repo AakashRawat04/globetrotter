@@ -8,9 +8,11 @@ import {
 	DialogHeader,
 	DialogTitle,
 } from "@/components/ui/dialog";
-import { Copy, Share2, Smartphone, X } from "lucide-react";
+import { createChallange } from "@/services/api.service";
+import useAuthStore from "@/store/useAuthStore";
+import { Copy, Smartphone, X } from "lucide-react";
 import Image from "next/image";
-import { usePathname } from "next/navigation";
+import { usePathname, useRouter } from "next/navigation";
 import { useEffect, useState } from "react";
 
 interface ShareChallengeDialogProps {
@@ -29,13 +31,26 @@ const ShareChallengeDialog: React.FC<ShareChallengeDialogProps> = ({
 	const [cityImage, setCityImage] = useState<string | null>(null);
 	const [imageLoading, setImageLoading] = useState(false);
 	const [imageError, setImageError] = useState(false);
+	const router = useRouter();
+	const { token } = useAuthStore();
 
 	// Generate a unique challenge ID and fetch image when the dialog opens
 	useEffect(() => {
 		if (isOpen) {
-			setChallengeId(
-				"GT-" + Math.random().toString(36).substring(2, 8).toUpperCase()
-			);
+			const initializeChallenge = async () => {
+				if (!token) {
+					console.error("No token found");
+					return;
+				}
+				// Generate a unique challenge ID
+				const response = await createChallange(token);
+				if (!response) {
+					console.error("Error creating challenge:", response);
+					return;
+				}
+				setChallengeId(response.challenge.challengeid);
+			};
+			initializeChallenge();
 			fetchRandomCityImage();
 		}
 	}, [isOpen]);
@@ -79,7 +94,7 @@ const ShareChallengeDialog: React.FC<ShareChallengeDialogProps> = ({
 	const pathname = usePathname();
 	const fullUrl =
 		typeof window !== "undefined" ? `${window.location.origin}${pathname}` : "";
-	const shareUrl = `${fullUrl}?challenge=${challengeId}`;
+	const shareUrl = `${fullUrl}/challenge/${challengeId}`;
 	const shareMessage = `${playerName} has challenged you to a geography quiz on Globetrotter! Join the challenge: ${shareUrl}`;
 
 	// Copy link to clipboard
@@ -97,19 +112,10 @@ const ShareChallengeDialog: React.FC<ShareChallengeDialogProps> = ({
 		window.open(whatsappUrl, "_blank");
 	};
 
-	// Use Web Share API if available
-	const shareViaWebShare = () => {
-		if (navigator.share) {
-			navigator
-				.share({
-					title: "Globetrotter Challenge",
-					text: shareMessage,
-					url: shareUrl,
-				})
-				.catch((err) => console.error("Error sharing:", err));
-		} else {
-			copyToClipboard();
-		}
+	// Navigate to challenge
+	const goToChallenge = () => {
+		onClose(); // Close the dialog
+		router.push(shareUrl); // Navigate to the challenge URL
 	};
 
 	return (
@@ -179,10 +185,9 @@ const ShareChallengeDialog: React.FC<ShareChallengeDialogProps> = ({
 
 					<Button
 						className="w-full bg-amber-500 text-black hover:bg-amber-600"
-						onClick={shareViaWebShare}
+						onClick={goToChallenge}
 					>
-						<Share2 className="mr-2 h-4 w-4" />
-						Share Challenge
+						Go to Challenge
 					</Button>
 
 					<div className="flex gap-2">

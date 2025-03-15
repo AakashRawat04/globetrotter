@@ -34,15 +34,15 @@ export const getChallengeById = async (req: AuthRequest, res: Response) => {
 			return res.status(400).json({ message: "Challenge ID is required" });
 		}
 
-		const challenge = await challengeService.getChallengeById(id);
+		const challengeRecords = await challengeService.getChallengeById(id);
 
-		if (!challenge) {
+		if (!challengeRecords) {
 			return res.status(404).json({ message: "Challenge not found" });
 		}
 
 		res.status(200).json({
 			message: "Challenge retrieved successfully",
-			participants: challenge,
+			participants: challengeRecords,
 		});
 	} catch (error) {
 		console.error("Error fetching challenge:", error);
