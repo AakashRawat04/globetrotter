@@ -127,15 +127,7 @@ const ShareChallengeDialog: React.FC<ShareChallengeDialogProps> = ({
 
 				{/* Challenge Preview */}
 				<div className="bg-gradient-to-br from-blue-900 to-indigo-950 p-4 rounded-md my-2 relative">
-					<div className="absolute top-2 right-2 z-10">
-						<div className="bg-amber-500/90 text-black text-xs px-2 py-1 rounded-full font-bold">
-							Challenge ID: {challengeId}
-						</div>
-					</div>
 					<div className="text-center mb-3">
-						<h3 className="text-lg font-bold text-white">
-							{playerName} has challenged you!
-						</h3>
 						<p className="text-sm text-white/80">
 							Test your geography knowledge in a global showdown
 						</p>

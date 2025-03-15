@@ -2,7 +2,7 @@
 
 import { Button } from "@/components/ui/button";
 import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
-import { validateAnswer } from "@/services/api.service";
+import { getCorrectAnswer, validateAnswer } from "@/services/api.service";
 import useAuthStore from "@/store/useAuthStore";
 import useGameStore from "@/store/useGameStore";
 import { RefreshCw } from "lucide-react";
@@ -22,8 +22,9 @@ const QuizBox: React.FC<QuizBoxProps> = ({ userName, clues, trivia, qbid }) => {
 	const [guess, setGuess] = useState("");
 	const [currentClueIndex, setCurrentClueIndex] = useState(0);
 	const [answerStatus, setAnswerStatus] = useState<
-		"waiting" | "correct" | "incorrect"
+		"waiting" | "correct" | "incorrect" | "gave-up"
 	>("waiting");
+	const [correctAnswer, setCorrectAnswer] = useState<string | null>(null);
 	const { token } = useAuthStore();
 	const { setWins, setLoss } = useGameStore();
 
@@ -53,6 +54,21 @@ const QuizBox: React.FC<QuizBoxProps> = ({ userName, clues, trivia, qbid }) => {
 	const handleRephrase = () => {
 		// Move to the next clue in the array, or cycle back to the beginning
 		setCurrentClueIndex((prevIndex) => (prevIndex + 1) % clues.length);
+	};
+
+	// handle giving up to see the correct answer
+	const handleGiveUp = async () => {
+		const response = await getCorrectAnswer(qbid, token!);
+		if (!response) {
+			console.error("Error getting correct answer");
+			return;
+		}
+
+		console.log("Response from getCorrectAnswer:", response);
+
+		setCorrectAnswer(response.data.correctAnswer);
+		setLoss(response.data.loss);
+		setAnswerStatus("gave-up");
 	};
 
 	return (
@@ -87,7 +103,7 @@ const QuizBox: React.FC<QuizBoxProps> = ({ userName, clues, trivia, qbid }) => {
 				</CardHeader>
 				<CardContent className="space-y-6 p-6">
 					{/* Display different images based on answer status */}
-					<div className="flex justify-center  mb-2">
+					<div className="flex justify-center mb-2">
 						{answerStatus === "waiting" && (
 							<Image
 								width={120}
@@ -112,31 +128,69 @@ const QuizBox: React.FC<QuizBoxProps> = ({ userName, clues, trivia, qbid }) => {
 								alt="Incorrect"
 							/>
 						)}
+						{answerStatus === "gave-up" && (
+							<div className="text-center">
+								<Image
+									width={120}
+									height={120}
+									src="/images/giveup.png"
+									alt="Gave Up"
+									className="mx-auto"
+								/>
+								<div className="mt-4 p-3 bg-red-900/50 rounded-md">
+									<p className="text-gray-300 mb-1">The correct answer was:</p>
+									<p className="text-xl font-bold text-amber-400">
+										{correctAnswer}
+									</p>
+								</div>
+							</div>
+						)}
 					</div>
 					{/* Answer input with guess button */}
 					<div className="flex flex-col gap-4">
-						<div className="flex items-center gap-3">
-							<Input
-								className="flex-1 h-12 text-lg"
-								placeholder="Your answer..."
-								value={guess}
-								onChange={(e) => setGuess(e.target.value)}
-							/>
+						{answerStatus === "waiting" || answerStatus === "incorrect" ? (
+							<>
+								<div className="flex items-center gap-3">
+									<Input
+										className="flex-1 h-12 text-lg"
+										placeholder="Your answer..."
+										value={guess}
+										onChange={(e) => setGuess(e.target.value)}
+									/>
+									<Button
+										variant="default"
+										className="bg-amber-500 hover:bg-amber-600 text-black h-12 text-lg px-6"
+										onClick={handleGuessClick}
+									>
+										Guess
+									</Button>
+								</div>
+								<div className="flex gap-3">
+									<Button
+										variant="outline"
+										className="bg-transparent text-white border-white hover:bg-white/20 hover:text-white text-base flex-1"
+										onClick={() => window.location.reload()}
+									>
+										Next Question
+									</Button>
+									<Button
+										variant="outline"
+										className="bg-transparent text-red-400 border-red-400 hover:bg-red-800/30 hover:text-red-300 text-base flex-1"
+										onClick={handleGiveUp}
+									>
+										Give Up
+									</Button>
+								</div>
+							</>
+						) : (
 							<Button
-								variant="default"
-								className="bg-amber-500 hover:bg-amber-600 text-black h-12 text-lg px-6"
-								onClick={handleGuessClick}
+								variant="outline"
+								className="bg-transparent text-white border-white hover:bg-white/20 hover:text-white text-base w-full"
+								onClick={() => window.location.reload()}
 							>
-								Guess
+								Next Question
 							</Button>
-						</div>
-						<Button
-							variant="outline"
-							className="bg-transparent text-white border-white hover:bg-white/20 hover:text-white text-base w-full"
-							onClick={() => window.location.reload()}
-						>
-							Next Question
-						</Button>
+						)}
 					</div>
 				</CardContent>
 			</Card>

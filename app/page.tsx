@@ -62,8 +62,6 @@ export default function Home() {
 		randomQuestion();
 	}, [token]);
 
-	console.log("token in page", token);
-
 	return (
 		<ProtectedRoute>
 			{user && question && !isLoading ? (

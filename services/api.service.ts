@@ -72,3 +72,27 @@ export const getUserProfile = async (
 		console.error("Error fetching user profile:", error);
 	}
 };
+
+export const getCorrectAnswer = async (
+	qbid: string,
+	token: string
+): Promise<
+	| {
+			answer: string;
+			data: { wins: number; loss: number; correctAnswer: string };
+	  }
+	| undefined
+> => {
+	try {
+		const data = await fetchApi("/giveup", {
+			method: "POST",
+			body: { qbid },
+			headers: {
+				Authorization: `Bearer ${token}`,
+			},
+		});
+		return data;
+	} catch (error) {
+		console.error("Error getting correct answer:", error);
+	}
+};
