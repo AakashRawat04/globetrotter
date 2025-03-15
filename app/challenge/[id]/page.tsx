@@ -1,6 +1,5 @@
 "use client";
 
-import QuizBox from "@/components/QuizBox";
 import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
 import { useParams } from "next/navigation";
 import { useState } from "react";
@@ -14,10 +13,10 @@ interface Player {
 
 export default function ChallengePage() {
 	const [userName] = useState("Guest");
-	const [wins, setWins] = useState(0);
-	const [losses, setLosses] = useState(0);
 
 	const params = useParams();
+	const wins = 0; // Replace with actual wins from your state management
+	const losses = 0; // Replace with actual losses from your state management
 
 	// Sample leaderboard data (would come from API in a real app)
 	const [leaderboard] = useState<Player[]>([
@@ -27,14 +26,6 @@ export default function ChallengePage() {
 		{ id: 4, name: "AliceWilliams", wins: 25, losses: 8 },
 		{ id: 5, name: "CharlieBrown", wins: 20, losses: 20 },
 	]);
-
-	const handleCorrectAnswer = () => {
-		setWins((prev) => prev + 1);
-	};
-
-	const handleIncorrectAnswer = () => {
-		setLosses((prev) => prev + 1);
-	};
 
 	return (
 		<div className="min-h-screen flex flex-col bg-cover bg-opacity-50">
@@ -66,11 +57,11 @@ export default function ChallengePage() {
 				</div>
 
 				{/* Quiz Box Component */}
-				<QuizBox
+				{/* <QuizBox
 					userName={userName}
 					onCorrectAnswer={handleCorrectAnswer}
 					onIncorrectAnswer={handleIncorrectAnswer}
-				/>
+				/> */}
 
 				{/* Leaderboard */}
 				<Card className="w-full max-w-2xl mx-auto mt-12 bg-black/70 text-white border-none">
@@ -122,11 +113,9 @@ export default function ChallengePage() {
 										<td className="px-4 py-3">-</td>
 										<td className="px-4 py-3 font-medium">{userName} (You)</td>
 										<td className="px-4 py-3 text-center text-green-400">
-											{wins}
+											{0}
 										</td>
-										<td className="px-4 py-3 text-center text-red-400">
-											{losses}
-										</td>
+										<td className="px-4 py-3 text-center text-red-400">{0}</td>
 										<td className="px-4 py-3 text-center">
 											{wins + losses > 0
 												? Math.round((wins / (wins + losses)) * 100)
