@@ -1,3 +1,5 @@
+"use client";
+
 import { Button } from "@/components/ui/button";
 import {
 	Dialog,
@@ -8,6 +10,7 @@ import {
 } from "@/components/ui/dialog";
 import { Copy, Share2, Smartphone, X } from "lucide-react";
 import Image from "next/image";
+import { usePathname } from "next/navigation";
 import { useEffect, useState } from "react";
 
 interface ShareChallengeDialogProps {
@@ -73,7 +76,10 @@ const ShareChallengeDialog: React.FC<ShareChallengeDialogProps> = ({
 	};
 
 	// Create the share URL and message
-	const shareUrl = `${window.location.origin}?challenge=${challengeId}`;
+	const pathname = usePathname();
+	const fullUrl =
+		typeof window !== "undefined" ? `${window.location.origin}${pathname}` : "";
+	const shareUrl = `${fullUrl}?challenge=${challengeId}`;
 	const shareMessage = `${playerName} has challenged you to a geography quiz on Globetrotter! Join the challenge: ${shareUrl}`;
 
 	// Copy link to clipboard
