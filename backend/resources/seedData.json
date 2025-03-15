@@ -46,5 +46,325 @@
       "New York City has 468 subway stations, making it one of the most complex transit systems in the world.",
       "The Empire State Building has its own zip code: 10118."
     ]
+  },
+  {
+    "city": "Kolkata",
+    "country": "India",
+    "clues": [
+      "A place where yellow taxis outnumber humans and fish is basically a family member.",
+      "You’ll find more intellectuals arguing over tea here than mosquitoes in a monsoon puddle."
+    ],
+    "fun_fact": [
+      "A massive bridge here sways like your uncle after too much festive hooch!",
+      "They say trams still run here because time forgot to move on from the 1900s."
+    ],
+    "trivia": [
+      "The sweets here are so addictive, even your dentist will say, ‘Ek aur kha lo!’",
+      "A river runs through it, perfect for pondering life while dodging street hawkers."
+    ]
+  },
+  {
+    "city": "Chennai",
+    "country": "India",
+    "clues": [
+      "Sweat is your best friend here, and filter coffee is your morning therapist.",
+      "A coastal gem where lungis are high fashion and auto drivers are the real kings."
+    ],
+    "fun_fact": [
+      "The beach here is so long, you could walk it and still not find a spot without a snack vendor!",
+      "A massive film industry thrives here, producing more heroes than your average masala movie needs."
+    ],
+    "trivia": [
+      "The sun here is so generous, it gives you a free tan whether you want it or not!",
+      "They say the rice plates here are so big, you’ll need a nap before you finish."
+    ]
+  },
+  {
+    "city": "Hyderabad",
+    "country": "India",
+    "clues": [
+      "A place where biryani is a religion and pearls are cheaper than your last haircut.",
+      "Old forts and new IT hubs fight for attention like siblings at a family function."
+    ],
+    "fun_fact": [
+      "A giant statue in a lake here stares at you while you’re stuck in traffic daydreaming about food!",
+      "They once built a film studio so big, it’s basically a city within a city—lights, camera, biryani!"
+    ],
+    "trivia": [
+      "Spice levels here are so high, your tongue will file a complaint with the fire department!",
+      "A famous dish here has fans arguing over who makes it best—spoiler: it’s everyone’s mom."
+    ]
+  },
+  {
+    "city": "Ahmedabad",
+    "country": "India",
+    "clues": [
+      "Kites rule the sky here like Bollywood rules your TV on weekends.",
+      "A dry land where snacks are king and business runs faster than a rickshaw in rush hour."
+    ],
+    "fun_fact": [
+      "A riverfront got a glow-up here, turning a trickle into a selfie hotspot!",
+      "They say the textile game here is so old, even your grandma’s saree has a story."
+    ],
+    "trivia": [
+      "The street food scene is so wild, you’ll gain weight just thinking about the fafda!",
+      "A massive statue here is so tall, it probably judges your life choices from above."
+    ]
+  },
+  {
+    "city": "Jaipur",
+    "country": "India",
+    "clues": [
+      "Palaces here are painted like they’re blushing from all the tourist attention.",
+      "Camels and forts remind you of a time when Instagram filters weren’t a thing."
+    ],
+    "fun_fact": [
+      "A king built an observatory here because stargazing was cooler than Netflix back then!",
+      "One fort has so many mirrors, it’s basically a disco ball for royalty."
+    ],
+    "trivia": [
+      "The jewelry here is so stunning, you’ll forget your budget faster than a sale at D-Mart!",
+      "Spicy snacks here will make you cry tears of joy—or maybe just tears."
+    ]
+  },
+  {
+    "city": "Pune",
+    "country": "India",
+    "clues": [
+      "Two-wheelers zoom around here like they’re auditioning for a stunt movie.",
+      "A chill vibe where students and retirees fight over who loves the tea stalls more."
+    ],
+    "fun_fact": [
+      "A hill fort nearby has seen more battles than your family WhatsApp group!",
+      "The bakeries here are so old, they probably invented the bun maska."
+    ],
+    "trivia": [
+      "Monsoon treks here are so popular, even the clouds RSVP!",
+      "The misal pav is so spicy, it’s basically a dare in food form."
+    ]
+  },
+  {
+    "city": "Lucknow",
+    "country": "India",
+    "clues": [
+      "Kebabs and politeness are served in equal measure—like a buffet with manners!",
+      "Old buildings here whisper tales of kings who loved poetry more than paperwork."
+    ],
+    "fun_fact": [
+      "A maze-like monument here was built to confuse invaders—or maybe just tourists!",
+      "The embroidery here is so fancy, even your socks will feel underdressed."
+    ],
+    "trivia": [
+      "The food here is so rich, your stomach will need a loan to digest it!",
+      "A river flows by, watching you stuff your face with galouti kebabs."
+    ]
+  },
+  {
+    "city": "Varanasi",
+    "country": "India",
+    "clues": [
+      "A riverbank where spirituality and chaos hold hands like an awkward first date.",
+      "Steps lead down to water where people wash away sins—and maybe their laundry too."
+    ],
+    "fun_fact": [
+      "They say this place is so old, even the stones have retirement plans!",
+      "Boats here carry more pilgrims than your uncle’s scooter on a family outing."
+    ],
+    "trivia": [
+      "The chai here is so good, you’ll forgive the cow blocking your path!",
+      "A fire burns here forever—like your mom’s gossip sessions."
+    ]
+  },
+  {
+    "city": "Goa",
+    "country": "India",
+    "clues": [
+      "Beaches here are where flip-flops are formal wear and fish curry is a hug in a bowl.",
+      "A party spot where the sunsets are free but the beer isn’t!"
+    ],
+    "fun_fact": [
+      "Old churches here look like they’re posing for a postcard 24/7!",
+      "They say the hippies found this place first—now it’s all selfies and sunburns."
+    ],
+    "trivia": [
+      "The seafood here is so fresh, it probably swam to your plate!",
+      "A fort by the sea laughs at you while you sweat through your vacation."
+    ]
+  },
+  {
+    "city": "Amritsar",
+    "country": "India",
+    "clues": [
+      "A golden glow lights up this place like a divine disco ball.",
+      "Butter-soaked bread here is a love letter to your tastebuds—and a challenge to your waistline."
+    ],
+    "fun_fact": [
+      "A kitchen here feeds thousands daily, no RSVP required!",
+      "A border nearby has soldiers dancing like it’s a patriotic TikTok."
+    ],
+    "trivia": [
+      "The lassi here is so thick, you’ll need a spoon and a nap!",
+      "A pond reflects the shine while you dodge selfie sticks."
+    ]
+  },
+  {
+    "city": "Kochi",
+    "country": "India",
+    "clues": [
+      "Fishing nets here look like they’re posing for a vintage photoshoot.",
+      "A port where spices and history mix like a curry gone wild."
+    ],
+    "fun_fact": [
+      "A synagogue here has tiles so pretty, you’ll forget to pray!",
+      "Backwaters nearby are so chill, even the fish take naps."
+    ],
+    "trivia": [
+      "The seafood here is so spicy, your tongue will call for backup!",
+      "Old forts watch you sip coconut water and judge your life choices."
+    ]
+  },
+  {
+    "city": "Chandigarh",
+    "country": "India",
+    "clues": [
+      "A planned paradise where even the roads have a superiority complex!",
+      "Gardens here bloom like they’re showing off for the neighbors."
+    ],
+    "fun_fact": [
+      "A rock garden here turns trash into treasure—your hoarding auntie would approve!",
+      "A French guy designed it, so it’s fancy but still has potholes."
+    ],
+    "trivia": [
+      "The butter chicken here is so good, you’ll forgive the traffic cops!",
+      "A lake nearby is where ducks judge your paddleboat skills."
+    ]
+  },
+  {
+    "city": "Bhopal",
+    "country": "India",
+    "clues": [
+      "Lakes here are so big, you’ll wonder if they’re showing off!",
+      "A quiet vibe where history and biryani compete for your attention."
+    ],
+    "fun_fact": [
+      "A mosque here is so pink, it looks like it’s blushing at the tourists!",
+      "Caves nearby prove humans have been chilling here since forever."
+    ],
+    "trivia": [
+      "The street food is so tasty, you’ll forget the humidity sticking to your shirt!",
+      "A boat ride here feels like a mini-vacation from your boss’s calls."
+    ]
+  },
+  {
+    "city": "Guwahati",
+    "country": "India",
+    "clues": [
+      "A river runs through it like it’s late for a meeting with the hills!",
+      "Temples here perch on heights like they’re flexing their spiritual Wi-Fi."
+    ],
+    "fun_fact": [
+      "A bridge here connects more than just land—it’s a lifeline for tea lovers!",
+      "Rhinos nearby are so chill, they don’t even care about your selfies."
+    ],
+    "trivia": [
+      "The momos here are so good, you’ll fight your friends for the last one!",
+      "A hilltop spot offers views so stunning, you’ll forgive the climb."
+    ]
+  },
+  {
+    "city": "Nagpur",
+    "country": "India",
+    "clues": [
+      "Oranges here are so famous, they’re basically the local celebrities!",
+      "A chill spot smack in the middle, where summers test your AC’s loyalty."
+    ],
+    "fun_fact": [
+      "A zero milestone here marks it as the center of everything—like your mom’s house!",
+      "Lakes nearby are so calm, even the fish meditate."
+    ],
+    "trivia": [
+      "The spicy tarri poha here wakes you up faster than your alarm!",
+      "A wildlife park nearby has tigers judging your picnic skills."
+    ]
+  },
+  {
+    "city": "Patna",
+    "country": "India",
+    "clues": [
+      "A riverbank where history is older than your grandpa’s stories!",
+      "Crowds here move like they’re late for a sale on litti chokha."
+    ],
+    "fun_fact": [
+      "A granary here was built so deep, it’s basically a historical swimming pool!",
+      "Ancient ruins nearby whisper tales of kings who loved paperwork."
+    ],
+    "trivia": [
+      "The street food is so cheap and tasty, your wallet will thank you while your stomach begs for mercy!",
+      "A bridge here is so long, you’ll nap before you cross it."
+    ]
+  },
+  {
+    "city": "Indore",
+    "country": "India",
+    "clues": [
+      "A foodie heaven where breakfast is a competitive sport!",
+      "Palaces here remind you of kings who clearly had too much time and money."
+    ],
+    "fun_fact": [
+      "A night market here serves snacks till dawn—because sleep is overrated!",
+      "A river flows nearby, watching you munch on poha like it’s judging your diet."
+    ],
+    "trivia": [
+      "The chaat here is so good, you’ll fight your sibling for the last bite!",
+      "A temple nearby has glass so shiny, it’s basically a divine mirror."
+    ]
+  },
+  {
+    "city": "Surat",
+    "country": "India",
+    "clues": [
+      "Diamonds sparkle here like they’re auditioning for a Bollywood song!",
+      "A bustling spot where textiles and street food are the real VIPs."
+    ],
+    "fun_fact": [
+      "A clock tower here is so old, it’s probably tired of ticking!",
+      "The snack game is so strong, even the pigeons are overweight."
+    ],
+    "trivia": [
+      "The khaman here is so fluffy, you’ll wonder if it’s a snack or a cloud!",
+      "A bridge swings like it’s grooving to a Gujju garba beat."
+    ]
+  },
+  {
+    "city": "Madurai",
+    "country": "India",
+    "clues": [
+      "Temples here are so grand, they make your local pandal look like a Lego set!",
+      "A hot spot where jasmine and dosas perfume the air in equal measure."
+    ],
+    "fun_fact": [
+      "A palace here has pillars so many, you’ll lose count before your selfie!",
+      "They say the city never sleeps—probably because of all the temple bells!"
+    ],
+    "trivia": [
+      "The jigar thanda here cools you down while the heat laughs in your face!",
+      "A river nearby is so holy, even the fish pray."
+    ]
+  },
+  {
+    "city": "Shimla",
+    "country": "India",
+    "clues": [
+      "Hills here are so steep, your legs will file a complaint by lunchtime!",
+      "A colonial vibe where toy trains chug along like they’re late for tea."
+    ],
+    "fun_fact": [
+      "A ridge here has views so good, even the monkeys stop to stare!",
+      "They say summers here were invented for people tired of sweating."
+    ],
+    "trivia": [
+      "The apples here are so crisp, you’ll hear them crunch over the traffic!",
+      "A mall road bans cars so you can stroll—and dodge selfie sticks."
+    ]
   }
 ]
