@@ -16,31 +16,97 @@ Here’s the lay of the land in this monorepo kingdom (minus the node_modules me
 
 
 ```
-.
-├── app                  # Frontend magic lives here
-│   ├── auth             # Login & auth pages
-│   ├── challenge        # Dynamic challenge routes
-│   ├── globals.css      # Styles to rule them all
-│   └── layout.tsx       # The app’s backbone
-├── backend              # Express.js backend goodness
+├── app
+│   ├── auth
+│   │   └── page.tsx
+│   ├── challenge
+│   │   └── [id]
+│   │       └── page.tsx
+│   ├── favicon.ico
+│   ├── globals.css
+│   ├── layout.tsx
+│   └── page.tsx
+├── backend
+│   ├── nodemon.json
+│   ├── package.json
+│   ├── package-lock.json
+│   ├── resources
+│   │   └── seedData.json
+│   ├── scripts
+│   │   └── seedQuestionBank.ts
 │   ├── src
-│   │   ├── controllers  # Logic for auth, challenges, and questions
-│   │   ├── routes       # API endpoints
-│   │   ├── services     # Database helpers
-│   │   └── types        # TypeScript typings
-│   ├── resources        # Seed data for trivia
-│   └── scripts          # Handy scripts like seeding the question bank
-├── components           # Reusable UI bits
-│   ├── auth             # Login & Register forms
-│   ├── QuizBox.tsx      # Where trivia happens
-│   ├── ShareChallengeDialog.tsx  # Challenge your friends!
-│   └── ui               # Shiny UI components (buttons, cards, etc.)
-├── public               # Static assets
-│   ├── images           # Memes + GOT-inspired backgrounds
-│   └── globe.svg        # Globetrotting vibes
-├── store                # Zustand stores for state management
-├── utils                # Helper functions
-└── README.md            # You’re here!
+│   │   ├── config
+│   │   │   └── supabase.ts
+│   │   ├── controllers
+│   │   │   ├── auth.controller.ts
+│   │   │   ├── challenge.controller.ts
+│   │   │   └── question.controller.ts
+│   │   ├── index.ts
+│   │   ├── middlewares
+│   │   │   └── auth.middleware.ts
+│   │   ├── routes
+│   │   │   └── api.ts
+│   │   ├── services
+│   │   │   └── db.service.ts
+│   │   └── types
+│   │       └── database.types.ts
+│   └── tsconfig.json
+├── components
+│   ├── auth
+│   │   ├── LoginForm.tsx
+│   │   └── RegisterForm.tsx
+│   ├── ChallengeQuizBox.tsx
+│   ├── ProtectedRoute.tsx
+│   ├── QuizBox.tsx
+│   ├── ShareChallengeDialog.tsx
+│   ├── TriviaBox.tsx
+│   └── ui
+│       ├── alert.tsx
+│       ├── button.tsx
+│       ├── card.tsx
+│       ├── dialog.tsx
+│       ├── input.tsx
+│       ├── label.tsx
+│       ├── progress.tsx
+│       └── tabs.tsx
+├── components.json
+├── eslint.config.mjs
+├── lib
+│   └── utils.ts
+├── next.config.ts
+├── next-env.d.ts
+├── package.json
+├── package-lock.json
+├── postcss.config.mjs
+├── public
+│   ├── file.svg
+│   ├── globe.svg
+│   ├── images
+│   │   ├── aww-hell-nah.png
+│   │   ├── background.jpg
+│   │   ├── correct.png
+│   │   ├── dankmemerthinking.png
+│   │   ├── giveup.png
+│   │   ├── scroll.png
+│   │   └── waiting.png
+│   ├── next.svg
+│   ├── vercel.svg
+│   └── window.svg
+├── README.md
+├── services
+│   └── api.service.ts
+├── store
+│   ├── useAuthStore.ts
+│   ├── useChallengeStore.ts
+│   └── useGameStore.ts
+├── tsconfig.json
+├── types
+│   ├── auth.ts
+│   └── index.ts
+└── utils
+    └── api.ts
+
+25 directories, 65 files
 ```
 
 ## Features 🌟
