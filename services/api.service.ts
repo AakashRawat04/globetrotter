@@ -1,4 +1,4 @@
-import { Question, User } from "@/types";
+import { Challenge, Question, User } from "@/types";
 import fetchApi from "@/utils/api";
 
 export const fetchRandomQuestion = async (
@@ -20,14 +20,15 @@ export const fetchRandomQuestion = async (
 export const validateAnswer = async (
 	qbid: string,
 	answer: string,
-	token: string
+	token: string,
+	challengeCode?: string
 ): Promise<
 	{ correct: boolean; data: { wins: number; loss: number } } | undefined
 > => {
 	try {
 		const data = await fetchApi("/validate", {
 			method: "POST",
-			body: { qbid, answer },
+			body: { qbid, answer, challengeCode },
 			headers: {
 				Authorization: `Bearer ${token}`,
 			},
@@ -75,7 +76,8 @@ export const getUserProfile = async (
 
 export const getCorrectAnswer = async (
 	qbid: string,
-	token: string
+	token: string,
+	challengeId?: string
 ): Promise<
 	| {
 			answer: string;
@@ -86,7 +88,7 @@ export const getCorrectAnswer = async (
 	try {
 		const data = await fetchApi("/giveup", {
 			method: "POST",
-			body: { qbid },
+			body: { qbid, challengeId },
 			headers: {
 				Authorization: `Bearer ${token}`,
 			},
@@ -97,12 +99,13 @@ export const getCorrectAnswer = async (
 	}
 };
 
-export const createChallange = async (
+export const createChallenge = async (
 	token: string
 ): Promise<
 	| {
 			challenge: {
 				challengeid: string;
+				challenge_code: string;
 				userid: string;
 				wins: number;
 				loss: number;
@@ -121,5 +124,49 @@ export const createChallange = async (
 		return data;
 	} catch (error) {
 		console.error("Error creating challenge:", error);
+	}
+};
+
+export const getChallengeByCode = async (
+	challengeCode: string,
+	token: string
+): Promise<{ participants: Challenge[] } | undefined> => {
+	try {
+		const headers: Record<string, string> = {};
+		if (token) {
+			headers.Authorization = `Bearer ${token}`;
+		}
+
+		const data = await fetchApi(`/challenge/${challengeCode}`, {
+			headers,
+		});
+
+		console.log("Data from getChallengeByCode:", data);
+		return data;
+	} catch (error) {
+		console.error("Error fetching challenge:", error);
+	}
+};
+
+export const validateAnswerInChallenge = async (
+	qbid: string,
+	answer: string,
+	token: string,
+	challengeId: string
+): Promise<
+	{ correct: boolean; data: { wins: number; loss: number } } | undefined
+> => {
+	try {
+		const data = await fetchApi("/validate", {
+			method: "POST",
+			body: { qbid, answer, challengeId },
+			headers: {
+				Authorization: `Bearer ${token}`,
+			},
+		});
+		console.log("Data from validateAnswerInChallenge:", data);
+		return data;
+	} catch (error) {
+		console.error("Error validating answer in challenge:", error);
 	}
 };

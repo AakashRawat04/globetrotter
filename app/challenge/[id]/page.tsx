@@ -1,32 +1,73 @@
 "use client";
 
+import ChallengeQuizBox from "@/components/ChallengeQuizBox";
 import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
+import {
+	fetchRandomQuestion,
+	getChallengeByCode,
+} from "@/services/api.service";
+import useAuthStore from "@/store/useAuthStore";
+import useChallengeStore from "@/store/useChallengeStore";
+import { Challenge, Question } from "@/types";
 import Link from "next/link";
 import { useParams } from "next/navigation";
-import { useState } from "react";
-
-interface Player {
-	id: number;
-	name: string;
-	wins: number;
-	losses: number;
-}
+import { useEffect, useState } from "react";
 
 export default function ChallengePage() {
-	const [userName] = useState("Guest");
-
 	const params = useParams();
-	const wins = 0; // Replace with actual wins from your state management
-	const losses = 0; // Replace with actual losses from your state management
+	const challengeCode = params.id as string;
+	const { token, user } = useAuthStore();
+	const { wins, loss, setWins, setLoss } = useChallengeStore();
+	const [question, setQuestion] = useState<Question | null>(null);
+	const [, setError] = useState<boolean>(false);
+	const [isLoading, setIsLoading] = useState(true);
+	const [participants, setParticipants] = useState<Challenge[]>([]);
 
-	// Sample leaderboard data (would come from API in a real app)
-	const [leaderboard] = useState<Player[]>([
-		{ id: 1, name: "JohnDoe", wins: 42, losses: 10 },
-		{ id: 2, name: "JaneSmith", wins: 38, losses: 5 },
-		{ id: 3, name: "BobJohnson", wins: 27, losses: 15 },
-		{ id: 4, name: "AliceWilliams", wins: 25, losses: 8 },
-		{ id: 5, name: "CharlieBrown", wins: 20, losses: 20 },
-	]);
+	useEffect(() => {
+		const randomQuestion = async () => {
+			console.log("token", token);
+			const question = await fetchRandomQuestion(token!);
+			if (!question) {
+				console.error("Error fetching question:");
+				setError(true);
+				setIsLoading(false);
+				return;
+			}
+			setQuestion(question);
+			setIsLoading(false);
+		};
+		randomQuestion();
+
+		// getChallengeByCode
+		const getLeaderboardRecords = async () => {
+			if (!token) {
+				console.error("No token found");
+				return;
+			}
+			const leaderboardRecords = await getChallengeByCode(
+				challengeCode,
+				token!
+			);
+			if (leaderboardRecords) {
+				setParticipants(leaderboardRecords.participants);
+
+				// Find current user in participants and update wins/losses in store
+				if (user && leaderboardRecords.participants.length > 0) {
+					const currentUserRecord = leaderboardRecords.participants.find(
+						(participant) => participant.userid === user.userid
+					);
+
+					if (currentUserRecord) {
+						setWins(currentUserRecord.wins);
+						setLoss(currentUserRecord.loss);
+					}
+				}
+			} else {
+				console.error("Error fetching user details");
+			}
+		};
+		getLeaderboardRecords();
+	}, [token, challengeCode, user, setLoss, setWins]);
 
 	return (
 		<div className="min-h-screen flex flex-col bg-cover bg-opacity-50">
@@ -37,32 +78,43 @@ export default function ChallengePage() {
 				</Link>
 				<div className="flex space-x-4 text-white">
 					<div className="bg-green-800/70 px-3 py-1 rounded-md flex items-center">
-						<span className="font-semibold mr-1">Wins:</span> {wins}
+						<span className="font-semibold mr-1">Wins:</span> {wins || 0}
 					</div>
 					<div className="bg-red-800/70 px-3 py-1 rounded-md flex items-center">
-						<span className="font-semibold mr-1">Losses:</span> {losses}
+						<span className="font-semibold mr-1">Losses:</span> {loss || 0}
 					</div>
 				</div>
 			</header>
 
 			{/* Main Content */}
 			<div className="flex-1 flex flex-col items-center justify-start p-4 md:px-12 pt-24">
-				{/* Challenge Info */}
-				<div className="w-full max-w-7xl mx-auto mb-6 text-center">
-					<h1 className="text-2xl font-bold text-white">
-						Challenge #{params.id}
-					</h1>
-					<p className="text-gray-300 mt-2">
-						Complete the challenge to climb the leaderboard!
-					</p>
-				</div>
-
-				{/* Quiz Box Component */}
-				{/* <QuizBox
-					userName={userName}
-					onCorrectAnswer={handleCorrectAnswer}
-					onIncorrectAnswer={handleIncorrectAnswer}
-				/> */}
+				{/* Quiz Box Component - only show when logged in */}
+				{isLoading ? (
+					<p className="text-white">Loading...</p>
+				) : (
+					<>
+						{token && question ? (
+							<ChallengeQuizBox
+								userName={user?.username || "Guest"}
+								clues={question.clues}
+								trivia={question.trivia}
+								qbid={question.qbid}
+								challengeCode={challengeCode}
+							/>
+						) : (
+							<Card className="w-full max-w-xl mx-auto bg-black/70 text-white border-none p-6">
+								<CardContent className="text-center">
+									<p className="mb-4">
+										Please log in to participate in this challenge.
+									</p>
+									<Link href="/auth" className="text-amber-400 hover:underline">
+										Login here
+									</Link>
+								</CardContent>
+							</Card>
+						)}
+					</>
+				)}
 
 				{/* Leaderboard */}
 				<Card className="w-full max-w-2xl mx-auto mt-12 bg-black/70 text-white border-none">
@@ -84,46 +136,47 @@ export default function ChallengePage() {
 									</tr>
 								</thead>
 								<tbody>
-									{leaderboard.map((player, index) => {
-										const winRate =
-											player.wins + player.losses > 0
-												? Math.round(
-														(player.wins / (player.wins + player.losses)) * 100
-												  )
-												: 0;
+									{participants.length === 0 ? (
+										<tr>
+											<td colSpan={5} className="px-4 py-3 text-center">
+												No participants yet. Be the first to join!
+											</td>
+										</tr>
+									) : (
+										participants.map((player, index) => {
+											const winRate =
+												player.wins + player.loss > 0
+													? Math.round(
+															(player.wins / (player.wins + player.loss)) * 100
+													  )
+													: 0;
 
-										return (
-											<tr
-												key={player.id}
-												className="border-b border-white/10 hover:bg-white/5"
-											>
-												<td className="px-4 py-3">{index + 1}</td>
-												<td className="px-4 py-3 font-medium">{player.name}</td>
-												<td className="px-4 py-3 text-center text-green-400">
-													{player.wins}
-												</td>
-												<td className="px-4 py-3 text-center text-red-400">
-													{player.losses}
-												</td>
-												<td className="px-4 py-3 text-center">{winRate}%</td>
-											</tr>
-										);
-									})}
-									{/* Current player row */}
-									<tr className="bg-amber-800/20">
-										<td className="px-4 py-3">-</td>
-										<td className="px-4 py-3 font-medium">{userName} (You)</td>
-										<td className="px-4 py-3 text-center text-green-400">
-											{0}
-										</td>
-										<td className="px-4 py-3 text-center text-red-400">{0}</td>
-										<td className="px-4 py-3 text-center">
-											{wins + losses > 0
-												? Math.round((wins / (wins + losses)) * 100)
-												: 0}
-											%
-										</td>
-									</tr>
+											const isCurrentUser = user?.userid === player.userid;
+
+											return (
+												<tr
+													key={player.userid}
+													className={`border-b border-white/10 hover:bg-white/5 ${
+														isCurrentUser ? "bg-amber-800/20" : ""
+													}`}
+												>
+													<td className="px-4 py-3">{index + 1}</td>
+													<td className="px-4 py-3 font-medium">
+														{isCurrentUser
+															? `${player.userid} (You)`
+															: player.userid}
+													</td>
+													<td className="px-4 py-3 text-center text-green-400">
+														{player.wins}
+													</td>
+													<td className="px-4 py-3 text-center text-red-400">
+														{player.loss}
+													</td>
+													<td className="px-4 py-3 text-center">{winRate}%</td>
+												</tr>
+											);
+										})
+									)}
 								</tbody>
 							</table>
 						</div>

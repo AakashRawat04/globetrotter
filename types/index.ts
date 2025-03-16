@@ -13,7 +13,7 @@ export interface Question {
 }
 
 export interface Challenge {
-	challengeid: string;
+	challenge_code: string;
 	userid: string;
 	wins: number;
 	loss: number;

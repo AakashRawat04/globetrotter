@@ -155,17 +155,89 @@ export const challengeService = {
 		return data as Challenge;
 	},
 
-	async getChallengeById(challengeid: string): Promise<Challenge[] | null> {
+	async getChallengeByCode(
+		challenge_code: string
+	): Promise<Challenge[] | null> {
 		const { data, error } = await supabase
 			.from("challenge")
-			.select("*")
-			.eq("challengeid", challengeid);
+			.select("*, users(userid, username)")
+			.eq("challenge_code", challenge_code);
 
 		if (error) {
 			console.error("Error fetching challenge:", error);
 			return null;
 		}
 
+		console.log("Challenge data:", data);
+
 		return data as Challenge[];
+	},
+
+	async updateChallengeStats(
+		challenge_code: string,
+		userid: string,
+		wins: number,
+		loss: number
+	): Promise<Challenge | null> {
+		const { data, error } = await supabase
+			.from("challenge")
+			.update({ wins, loss })
+			.eq("challenge_code", challenge_code)
+			.eq("userid", userid)
+			.select()
+			.single();
+
+		if (error) {
+			console.error("Error updating challenge stats:", error);
+			return null;
+		}
+
+		return data as Challenge;
+	},
+
+	async addUserToChallenge(
+		challenge_code: string,
+		userid: string,
+		wins: number,
+		loss: number
+	): Promise<Challenge | null> {
+		const newEntry = {
+			challenge_code,
+			userid,
+			wins,
+			loss,
+		};
+
+		const { data, error } = await supabase
+			.from("challenge")
+			.insert([newEntry])
+			.select()
+			.single();
+
+		if (error) {
+			console.error("Error adding user to challenge:", error);
+			return null;
+		}
+
+		return data as Challenge;
+	},
+
+	async getUserChallengeRecord(
+		challenge_code: string,
+		userid: string
+	): Promise<Challenge | null> {
+		const { data, error } = await supabase
+			.from("challenge")
+			.select("*")
+			.eq("challenge_code", challenge_code)
+			.eq("userid", userid)
+			.single();
+
+		if (error) {
+			console.error("Error getting user challenge record:", error);
+			return null;
+		}
+
+		return data as Challenge;
 	},
 };

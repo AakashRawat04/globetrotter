@@ -8,7 +8,7 @@ import {
 	DialogHeader,
 	DialogTitle,
 } from "@/components/ui/dialog";
-import { createChallange } from "@/services/api.service";
+import { createChallenge } from "@/services/api.service";
 import useAuthStore from "@/store/useAuthStore";
 import { Copy, Smartphone, X } from "lucide-react";
 import Image from "next/image";
@@ -26,7 +26,7 @@ const ShareChallengeDialog: React.FC<ShareChallengeDialogProps> = ({
 	onClose,
 	playerName,
 }) => {
-	const [challengeId, setChallengeId] = useState("");
+	const [challengeCode, setChallengeCode] = useState("");
 	const [copied, setCopied] = useState(false);
 	const [cityImage, setCityImage] = useState<string | null>(null);
 	const [imageLoading, setImageLoading] = useState(false);
@@ -34,7 +34,7 @@ const ShareChallengeDialog: React.FC<ShareChallengeDialogProps> = ({
 	const router = useRouter();
 	const { token } = useAuthStore();
 
-	// Generate a unique challenge ID and fetch image when the dialog opens
+	// Generate a unique challenge code and fetch image when the dialog opens
 	useEffect(() => {
 		if (isOpen) {
 			const initializeChallenge = async () => {
@@ -42,18 +42,19 @@ const ShareChallengeDialog: React.FC<ShareChallengeDialogProps> = ({
 					console.error("No token found");
 					return;
 				}
-				// Generate a unique challenge ID
-				const response = await createChallange(token);
+				// Generate a unique challenge with code
+				const response = await createChallenge(token);
+				console.log("Response from createChallenge:", response);
 				if (!response) {
 					console.error("Error creating challenge:", response);
 					return;
 				}
-				setChallengeId(response.challenge.challengeid);
+				setChallengeCode(response.challenge.challenge_code);
 			};
 			initializeChallenge();
 			fetchRandomCityImage();
 		}
-	}, [isOpen]);
+	}, [isOpen, token]);
 
 	// Fetch random city image
 	const fetchRandomCityImage = async () => {
@@ -94,7 +95,7 @@ const ShareChallengeDialog: React.FC<ShareChallengeDialogProps> = ({
 	const pathname = usePathname();
 	const fullUrl =
 		typeof window !== "undefined" ? `${window.location.origin}${pathname}` : "";
-	const shareUrl = `${fullUrl}/challenge/${challengeId}`;
+	const shareUrl = `${fullUrl}/challenge/${challengeCode}`;
 	const shareMessage = `${playerName} has challenged you to a geography quiz on Globetrotter! Join the challenge: ${shareUrl}`;
 
 	// Copy link to clipboard

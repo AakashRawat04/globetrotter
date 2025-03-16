@@ -7,7 +7,7 @@ import {
 } from "../controllers/auth.controller";
 import {
 	createChallenge,
-	getChallengeById,
+	getChallengeByCode,
 } from "../controllers/challenge.controller";
 import {
 	getRandomQuestion,
@@ -36,6 +36,6 @@ router.post("/giveup", authMiddleware, giveup);
 
 // Challenge routes - protected with auth middleware
 router.post("/challenge/create", authMiddleware, createChallenge);
-router.get("/challenge/:id", getChallengeById);
+router.get("/challenge/:code", getChallengeByCode);
 
 export default router;

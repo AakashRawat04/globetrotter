@@ -6,9 +6,9 @@ import { userService } from "../services/db.service";
 
 export const register = async (req: Request, res: Response) => {
 	try {
-		const { username, email, password } = req.body;
+		const { username, password } = req.body;
 
-		if (!username || !email || !password) {
+		if (!username || !password) {
 			return res.status(400).json({ message: "All fields are required" });
 		}
 
