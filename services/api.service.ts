@@ -8,6 +8,7 @@ export const fetchRandomQuestion = async (
 		console.log("Fetching random question...");
 		const data = await fetchApi("/guess", {
 			headers: {
+				"Access-Control-Allow-Origin": "*",
 				Authorization: `Bearer ${token}`,
 			},
 		});
@@ -30,6 +31,8 @@ export const validateAnswer = async (
 			method: "POST",
 			body: { qbid, answer, challengeCode },
 			headers: {
+				"Access-Control-Allow-Origin": "*",
+
 				Authorization: `Bearer ${token}`,
 			},
 		});
@@ -50,6 +53,8 @@ export const updateUserStats = async (
 			method: "PUT",
 			body: { wins, losses },
 			headers: {
+				"Access-Control-Allow-Origin": "*",
+
 				Authorization: `Bearer ${token}`,
 			},
 		});
@@ -65,6 +70,8 @@ export const getUserProfile = async (
 	try {
 		const data = await fetchApi("/user/me", {
 			headers: {
+				"Access-Control-Allow-Origin": "*",
+
 				Authorization: `Bearer ${token}`,
 			},
 		});
@@ -90,6 +97,8 @@ export const getCorrectAnswer = async (
 			method: "POST",
 			body: { qbid, challengeId },
 			headers: {
+				"Access-Control-Allow-Origin": "*",
+
 				Authorization: `Bearer ${token}`,
 			},
 		});
@@ -117,6 +126,8 @@ export const createChallenge = async (
 		const data = await fetchApi("/challenge/create", {
 			method: "POST",
 			headers: {
+				"Access-Control-Allow-Origin": "*",
+
 				Authorization: `Bearer ${token}`,
 			},
 		});
@@ -138,7 +149,10 @@ export const getChallengeByCode = async (
 		}
 
 		const data = await fetchApi(`/challenge/${challengeCode}`, {
-			headers,
+			headers: {
+				"Access-Control-Allow-Origin": "*",
+				...headers,
+			},
 		});
 
 		console.log("Data from getChallengeByCode:", data);
@@ -161,6 +175,8 @@ export const validateAnswerInChallenge = async (
 			method: "POST",
 			body: { qbid, answer, challengeId },
 			headers: {
+				"Access-Control-Allow-Origin": "*",
+
 				Authorization: `Bearer ${token}`,
 			},
 		});
